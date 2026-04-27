@@ -1,18 +1,236 @@
-/* Edge Delivery default decoration */
-main > div,
-.has-template,
-div[data-status] {
-  display: none;
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/styles/fonts/inter-variable.woff2") format("woff2");
 }
 
-main div.section {
-  display: unset;
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/styles/fonts/inter-italic-variable.woff2") format("woff2");
 }
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 100 800;
+  font-display: swap;
+  src: url("/styles/fonts/jetbrains-mono-variable.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Arial";
+  src: local("Arial");
+  size-adjust: 107.40%;
+  ascent-override: 90.20%;
+  descent-override: 22.48%;
+  line-gap-override: 0%;
+}
+
+/* ---------- Tokens ---------- */
+:root {
+  --color-canvas: #ffffff;
+  --color-ink: #1a1a1a;
+  --color-ink-rich: #242424;
+  --color-ink-soft: rgb(36 36 36 / 62%);
+  --color-ink-quiet: rgb(36 36 36 / 42%);
+  --color-rule: rgb(36 36 36 / 8%);
+  --color-rule-strong: rgb(36 36 36 / 18%);
+  --color-wavelength: #68d0d0;
+  --color-wavelength-deep: #2faeae;
+  --color-wavelength-loud: #19d9d9;
+  --color-foam: #cce4e4;
+  --color-drafting: #f4f4f2;
+
+  --font-body: "Inter", arial, sans-serif;
+  --font-display: "Inter", arial, sans-serif;
+  --font-mono: "JetBrains Mono", "Courier New", courier, monospace;
+
+  --heading-mega: clamp(48px, 7vw, 96px);
+  --heading-xxl: clamp(48px, 6.5vw, 96px);
+  --heading-xl: clamp(36px, 4.6vw, 72px);
+  --heading-lg: clamp(26px, 2.8vw, 40px);
+  --heading-md: 22px;
+  --body: 17px;
+  --eyebrow: 11px;
+
+  --weight-thin: 100;
+  --weight-light: 200;
+  --weight-regular: 400;
+  --weight-mid: 500;
+  --weight-eyebrow: 600;
+  --weight-bold: 700;
+
+  --tracking-mega: -0.045em;
+  --tracking-display: -0.035em;
+  --tracking-eyebrow: 0.14em;
+
+  --header-height: 72px;
+  --section-padding-y: clamp(80px, 10vw, 144px);
+  --section-padding-x: clamp(24px, 4vw, 56px);
+  --max-width: 1440px;
+  --radius: 0px;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ---------- Document reset ---------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: arial, sans-serif;
+  font-weight: var(--weight-regular);
+  font-size: var(--body);
+  line-height: 1.55;
+  padding-top: var(--header-height);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+body.session { font-family: var(--font-body); }
+
+a { color: inherit; text-decoration: none; }
+
+img,
+picture { max-width: 100%; display: block; }
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+::selection { background: var(--color-wavelength); color: var(--color-ink); }
+
+/* ---------- EDS section scaffold ---------- */
+main div.section { display: unset; }
+
+main > div,
+.has-template,
+main div[data-status] { display: none; }
 
 aem-sidekick {
   opacity: 0;
+}
 
-  &[open="true"].is-ready {
-    opacity: 1;
+aem-sidekick[open="true"].is-ready { opacity: 1; }
+
+/* ---------- Global button system ----------
+   The link decorator in scripts/ak.js applies these classes when authors
+   wrap a link in inline emphasis:
+     <strong><a>          → .btn.btn-primary
+     <em><a>              → .btn.btn-secondary
+     <em><strong><a>      → .btn.btn-accent
+     <del><a>             → .btn.btn-negative
+     contains <u>         → adds .btn-outline
+     2+ buttons in parent → parent gets .btn-group
+   Block JS clones the cell anchor; do NOT manufacture button anchors.
+   --------------------------------------------------------------- */
+a.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 26px;
+  font-size: 12px;
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  transition:
+    background 0.25s var(--ease-out),
+    color 0.25s var(--ease-out),
+    border-color 0.25s var(--ease-out);
+}
+
+a.btn-primary {
+  background: var(--color-wavelength);
+  color: var(--color-ink-rich);
+  border-color: var(--color-wavelength);
+}
+
+a.btn-primary:hover {
+  background: var(--color-wavelength-loud);
+  border-color: var(--color-wavelength-loud);
+}
+
+a.btn-secondary {
+  background: transparent;
+  color: currentcolor;
+  border-color: rgb(255 255 255 / 40%);
+}
+
+a.btn-secondary:hover {
+  border-color: currentcolor;
+  background: rgb(255 255 255 / 5%);
+}
+
+/* On light surfaces, secondary uses an ink-tinted outline.
+   Dark sections opt out by adding one of these classes / blocks. */
+main .section:not(.dark, .closing, .home-hero, .team-hero, .case-hero, .approach-hero, .service-hero) a.btn-secondary {
+  border-color: var(--color-rule-strong);
+  color: var(--color-ink-rich);
+}
+
+main .section:not(.dark, .closing, .home-hero, .team-hero, .case-hero, .approach-hero, .service-hero) a.btn-secondary:hover {
+  border-color: var(--color-ink-rich);
+  background: rgb(36 36 36 / 4%);
+}
+
+a.btn-accent {
+  background: var(--color-canvas);
+  color: var(--color-ink-rich);
+  border-color: var(--color-canvas);
+}
+
+a.btn-accent:hover {
+  background: var(--color-wavelength);
+  border-color: var(--color-wavelength);
+}
+
+a.btn-primary::after,
+a.btn-accent::after {
+  content: "→";
+  font-weight: 600;
+  transition: transform 0.3s var(--ease-out);
+}
+
+a.btn-primary:hover::after,
+a.btn-accent:hover::after { transform: translateX(4px); }
+
+a.btn-outline {
+  background: transparent;
+  border-color: currentcolor;
+}
+
+.btn-group {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

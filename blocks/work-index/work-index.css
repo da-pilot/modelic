@@ -1,0 +1,137 @@
+/* work-index — editorial rhythm grid of work tiles.
+   Lifted from stardust/prototypes/work.html `section.index`
+   and rescoped under .work-index. */
+
+.work-index {
+  padding: clamp(48px, 6vw, 96px) var(--section-padding-x) clamp(96px, 12vw, 160px);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.work-index .row {
+  display: grid;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.work-index .row.pair { grid-template-columns: 1fr 1fr; }
+.work-index .row.feature { grid-template-columns: 1fr; }
+
+.work-index .tile {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 3 / 2;
+  cursor: pointer;
+  transition: transform 0.4s var(--ease-out);
+  border: 1px solid var(--color-rule);
+  display: block;
+}
+
+.work-index .tile.feat { aspect-ratio: 21 / 9; }
+
+.work-index .tile:hover { transform: translateY(-3px); }
+
+.work-index .tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease-out), filter 0.35s;
+  filter: saturate(0.96) brightness(0.86);
+}
+
+.work-index .tile:hover img {
+  transform: scale(1.04);
+  filter: saturate(1.04) brightness(0.94);
+}
+
+.work-index .tile .overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(180deg, rgb(26 26 26 / 0%) 30%, rgb(26 26 26 / 72%) 100%);
+  pointer-events: none;
+}
+
+.work-index .tile .label {
+  position: absolute;
+  inset: auto 24px 24px;
+  z-index: 3;
+  color: var(--color-canvas);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.work-index .tile .label .index {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-wavelength);
+}
+
+.work-index .tile .label .name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 28px;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.work-index .tile.feat .label .name {
+  font-size: clamp(36px, 4vw, 56px);
+  max-width: 14ch;
+}
+
+.work-index .tile .label .row-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.work-index .tile .label .disc {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: rgb(255 255 255 / 70%);
+}
+
+.work-index .tile .label .outcome {
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgb(255 255 255 / 88%);
+  margin: 0;
+  max-width: 56ch;
+}
+
+.work-index .tile.feat .label .outcome {
+  font-size: 16px;
+  max-width: 64ch;
+}
+
+.work-index .tile .open-tag {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 3;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: rgb(255 255 255 / 85%);
+  background: rgb(0 0 0 / 40%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 6px 10px;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.work-index .tile:hover .open-tag { opacity: 1; }
+
+@media (max-width: 760px) {
+  .work-index .row.pair { grid-template-columns: 1fr; }
+}

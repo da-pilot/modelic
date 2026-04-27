@@ -1,0 +1,73 @@
+/* perspective — eyebrow + thin display headline above two body columns.
+   Lifted from stardust/prototypes/service-template.html section.perspective
+   and rescoped under .perspective. */
+
+.perspective {
+  padding: var(--section-padding-y) var(--section-padding-x);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.perspective .sec-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+  margin-bottom: 28px;
+}
+
+.perspective .sec-header .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-wavelength-deep);
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.perspective h2 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-thin);
+  font-size: var(--heading-xl);
+  line-height: 0.96;
+  letter-spacing: var(--tracking-display);
+  margin: 0 0 56px;
+  max-width: 18ch;
+}
+
+.perspective h2 strong {
+  font-weight: 700;
+}
+
+.perspective h2 strong em {
+  font-style: normal;
+  color: var(--color-wavelength-deep);
+}
+
+.perspective .body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+}
+
+.perspective .body p {
+  font-size: 19px;
+  line-height: 1.62;
+  color: var(--color-ink-rich);
+  margin: 0 0 24px;
+}
+
+.perspective .body > div > p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 980px) {
+  .perspective .body {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}

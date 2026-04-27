@@ -1,0 +1,66 @@
+/* case-prose — light-bg text-led prose module.
+   Sibling block to case-prose-tinted. Lifted from
+   stardust/prototypes/case-study-template.html `section.module.text-led`
+   and rescoped under .case-prose. */
+
+.case-prose {
+  padding: var(--section-padding-y) var(--section-padding-x);
+}
+
+.case-prose .inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.case-prose .module-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.case-prose .module-tag .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-wavelength-deep);
+}
+
+.case-prose h2 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-thin);
+  font-size: var(--heading-xl);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  margin: 0 0 32px;
+  max-width: 20ch;
+}
+
+.case-prose h2 strong { font-weight: var(--weight-bold); }
+
+.case-prose p {
+  font-size: 19px;
+  line-height: 1.66;
+  margin: 0 0 24px;
+  color: var(--color-ink-rich);
+}
+
+.case-prose p:last-child { margin-bottom: 0; }
+
+.case-prose .brief-block {
+  border-left: 3px solid var(--color-wavelength);
+  padding-left: 32px;
+}
+
+.case-prose .brief-block p {
+  font-family: "Inter", arial, sans-serif;
+  font-style: italic;
+  font-size: 22px;
+  line-height: 1.55;
+  color: var(--color-ink-rich);
+}

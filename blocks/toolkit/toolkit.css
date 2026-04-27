@@ -1,0 +1,53 @@
+/* toolkit — centered card with wavelength left-border accent.
+   Lifted from stardust/prototypes/service-template.html section.toolkit
+   and rescoped under .toolkit. */
+
+.toolkit {
+  padding: var(--section-padding-y) var(--section-padding-x);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.toolkit .toolkit-card {
+  background: var(--color-canvas);
+  border-left: 3px solid var(--color-wavelength);
+  padding: 48px 64px;
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.toolkit .toolkit-card .label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-wavelength-deep);
+  margin-bottom: 20px;
+}
+
+.toolkit .toolkit-card h3 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-light);
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  margin: 0 0 24px;
+  max-width: 22ch;
+}
+
+.toolkit .toolkit-card h3 strong {
+  font-weight: 700;
+}
+
+.toolkit .toolkit-card p {
+  font-size: 17px;
+  line-height: 1.62;
+  color: var(--color-ink-soft);
+  margin: 0;
+}
+
+@media (max-width: 720px) {
+  .toolkit .toolkit-card {
+    padding: 36px 32px;
+  }
+}

@@ -1,0 +1,48 @@
+/* glance — dark at-a-glance stat strip.
+   Lifted verbatim from stardust/prototypes/case-study-template.html
+   `section.glance` and rescoped under .glance. */
+
+.glance {
+  background: var(--color-ink-rich);
+  color: var(--color-canvas);
+  padding: 64px var(--section-padding-x);
+  border-top: 1px solid rgb(255 255 255 / 8%);
+}
+
+.glance .inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 32px;
+}
+
+.glance .glance-item .label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-wavelength);
+  margin-bottom: 8px;
+}
+
+.glance .glance-item .value {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 17px;
+  color: var(--color-canvas);
+  line-height: 1.4;
+}
+
+.glance .glance-item.metric .value {
+  font-family: var(--font-display);
+  font-weight: var(--weight-thin);
+  font-size: 48px;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  color: var(--color-wavelength);
+}
+
+@media (max-width: 980px) {
+  .glance .inner { grid-template-columns: 1fr 1fr; }
+}

@@ -1,0 +1,123 @@
+/* tenets — dark "three tenets" block.
+   Lifted from stardust/prototypes/approach.html `section.tenets`
+   and rescoped under .tenets. */
+
+.tenets {
+  background: var(--color-ink-rich);
+  color: var(--color-canvas);
+  padding: var(--section-padding-y) var(--section-padding-x);
+  position: relative;
+  overflow: hidden;
+}
+
+.tenets::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 800px 400px at 80% 30%, rgb(104 208 208 / 6%), transparent 65%);
+  pointer-events: none;
+}
+
+.tenets .inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.tenets .sec-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: rgb(255 255 255 / 55%);
+  margin-bottom: 32px;
+}
+
+.tenets .sec-header .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-wavelength);
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.tenets h2 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-thin);
+  font-size: var(--heading-xl);
+  line-height: 0.96;
+  letter-spacing: -0.035em;
+  margin: 0 0 96px;
+  max-width: 14ch;
+}
+
+.tenets h2 strong {
+  font-weight: 700;
+  color: var(--color-wavelength);
+}
+
+.tenets .tenet {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 64px;
+  padding: 56px 0;
+  border-top: 1px solid rgb(255 255 255 / 10%);
+  align-items: start;
+}
+
+.tenets .tenet:last-child {
+  border-bottom: 1px solid rgb(255 255 255 / 10%);
+}
+
+.tenets .tenet .left {
+  position: sticky;
+  top: 80px;
+}
+
+.tenets .tenet .num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: var(--tracking-eyebrow);
+  color: var(--color-wavelength);
+  margin-bottom: 16px;
+}
+
+.tenets .tenet h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(32px, 3.6vw, 48px);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  margin: 0;
+  color: var(--color-canvas);
+}
+
+.tenets .tenet h3 em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-wavelength);
+}
+
+.tenets .tenet .right p {
+  font-size: 17px;
+  line-height: 1.7;
+  color: rgb(255 255 255 / 78%);
+  margin: 0 0 18px;
+}
+
+.tenets .tenet .right p:last-child { margin-bottom: 0; }
+
+.tenets .tenet .right strong {
+  font-weight: 600;
+  color: var(--color-canvas);
+}
+
+@media (max-width: 980px) {
+  .tenets .tenet { grid-template-columns: 1fr; gap: 24px; }
+  .tenets .tenet .left { position: static; }
+}

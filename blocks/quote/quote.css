@@ -1,0 +1,75 @@
+/* quote — light-bg case-study quote module.
+   Lifted verbatim from stardust/prototypes/case-study-template.html
+   `section.quote` and rescoped under .quote. The decorative opening
+   curly quote is rendered via ::before so it's not authored content. */
+
+.quote {
+  padding: var(--section-padding-y) var(--section-padding-x);
+}
+
+.quote .inner {
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.quote .module-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.quote .module-tag .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-wavelength-deep);
+}
+
+.quote blockquote {
+  font-family: "Inter", arial, sans-serif;
+  font-style: italic;
+  font-size: clamp(28px, 3.4vw, 48px);
+  line-height: 1.25;
+  color: var(--color-ink-rich);
+  margin: 0 0 32px;
+  max-width: 22ch;
+  letter-spacing: -0.015em;
+}
+
+.quote blockquote::before {
+  content: "\201C";
+  color: var(--color-wavelength);
+  font-style: italic;
+  font-size: 1.6em;
+  vertical-align: -0.1em;
+  margin-right: 8px;
+}
+
+.quote .attr {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.quote .attr .name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--color-ink-rich);
+}
+
+.quote .attr .role {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+}

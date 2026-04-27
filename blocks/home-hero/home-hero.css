@@ -1,0 +1,186 @@
+/* home-hero — full-bleed dark with bg image + grid + radial overlay
+   + animated pulse dot. Lifted from stardust/prototypes/home-b-v1.html
+   `section.hero` selector and rescoped under .home-hero. */
+
+.home-hero {
+  position: relative;
+  min-height: calc(100vh - 56px);
+  overflow: hidden;
+  background: var(--color-ink-rich);
+}
+
+.home-hero .bg-image {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.home-hero .bg-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.55) saturate(0.85);
+}
+
+.home-hero .bg-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgb(26 26 26 / 78%) 0%, rgb(26 26 26 / 42%) 60%, rgb(26 26 26 / 70%) 100%),
+    radial-gradient(ellipse at 30% 70%, rgb(104 208 208 / 12%), transparent 50%);
+}
+
+.home-hero .bg-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background-image:
+    linear-gradient(rgb(255 255 255 / 4%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 4%) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: linear-gradient(180deg, transparent 0%, black 30%, black 70%, transparent 100%);
+}
+
+.home-hero .content {
+  position: relative;
+  z-index: 5;
+  min-height: calc(100vh - 56px);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--color-canvas);
+}
+
+.home-hero .hero-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-wavelength);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.home-hero .hero-tag::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: var(--color-wavelength);
+  border-radius: 50%;
+  animation: home-hero-pulse 2s ease-in-out infinite;
+}
+
+@keyframes home-hero-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: scale(1.4);
+  }
+}
+
+.home-hero h1 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-thin);
+  font-size: var(--heading-mega);
+  line-height: 0.96;
+  letter-spacing: var(--tracking-mega);
+  margin: 0 0 28px;
+  max-width: 16ch;
+  color: var(--color-canvas);
+}
+
+.home-hero h1 strong {
+  font-weight: 800;
+  color: var(--color-wavelength);
+  font-style: normal;
+}
+
+.home-hero .subhead {
+  font-weight: 300;
+  font-size: clamp(16px, 1.3vw, 20px);
+  line-height: 1.5;
+  color: rgb(255 255 255 / 78%);
+  max-width: 520px;
+  margin: 0 0 40px;
+}
+
+.home-hero .hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.home-hero .hero-bottom {
+  position: absolute;
+  bottom: 28px;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  color: rgb(255 255 255 / 70%);
+}
+
+.home-hero .hero-bottom .stamp {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1.6;
+}
+
+.home-hero .scroll-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.home-hero .scroll-indicator .line {
+  width: 1px;
+  height: 36px;
+  background: linear-gradient(180deg, transparent, rgb(255 255 255 / 70%));
+  animation: home-hero-scroll-pulse 2s ease-in-out infinite;
+}
+
+@keyframes home-hero-scroll-pulse {
+  0%,
+  100% {
+    transform: scaleY(0.4);
+    transform-origin: top;
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-hero .hero-tag::before,
+  .home-hero .scroll-indicator .line {
+    animation: none;
+  }
+}

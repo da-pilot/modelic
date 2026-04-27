@@ -1,0 +1,89 @@
+/* approach-hero — dark page hero for /approach.
+   Lifted from stardust/prototypes/approach.html `section.hero`
+   and rescoped under .approach-hero. */
+
+.approach-hero {
+  background: var(--color-ink-rich);
+  color: var(--color-canvas);
+  padding: clamp(96px, 11vw, 144px) var(--section-padding-x);
+  position: relative;
+  overflow: hidden;
+}
+
+.approach-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgb(104 208 208 / 50%), transparent);
+}
+
+.approach-hero::after {
+  content: "";
+  position: absolute;
+  right: -10%;
+  top: -10%;
+  width: 60%;
+  height: 80%;
+  background: radial-gradient(circle, rgb(104 208 208 / 8%), transparent 60%);
+  pointer-events: none;
+}
+
+.approach-hero .inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.approach-hero .hero-meta {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-wavelength);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 36px;
+}
+
+.approach-hero .hero-meta::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: var(--color-wavelength);
+}
+
+.approach-hero h1 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-thin);
+  font-size: var(--heading-mega);
+  line-height: 0.94;
+  letter-spacing: -0.04em;
+  margin: 0 0 32px;
+  max-width: 16ch;
+  color: var(--color-canvas);
+}
+
+.approach-hero h1 strong {
+  font-weight: 700;
+  color: var(--color-wavelength);
+  font-style: normal;
+}
+
+.approach-hero h1 strong em {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.approach-hero .subhead {
+  font-weight: 300;
+  font-size: clamp(20px, 1.6vw, 26px);
+  line-height: 1.5;
+  color: rgb(255 255 255 / 85%);
+  max-width: 50ch;
+  margin: 0;
+}

@@ -1,0 +1,277 @@
+/* work-bento — selected-work bento grid.
+   Lifted from stardust/prototypes/home-b-v1.html `section.work` and the
+   `.bento`/`.bento-tile`/`.bento-more` selectors, rescoped under
+   .work-bento. */
+
+.work-bento {
+  padding: var(--section-padding-y) var(--section-padding-x);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.work-bento .section-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.work-bento .section-eyebrow .dot {
+  width: 6px;
+  height: 6px;
+  background: var(--color-wavelength-deep);
+  border-radius: 50%;
+}
+
+.work-bento .work-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 32px;
+  align-items: end;
+  margin-bottom: 56px;
+}
+
+.work-bento .work-header h2 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-thin);
+  font-size: var(--heading-xl);
+  line-height: 0.96;
+  letter-spacing: var(--tracking-display);
+  margin: 0;
+  max-width: 18ch;
+}
+
+.work-bento .work-header h2 strong { font-weight: 700; }
+
+.work-bento .work-header h2 strong em {
+  font-style: normal;
+  color: var(--color-wavelength-deep);
+}
+
+.work-bento .stat-box {
+  display: flex;
+  gap: 32px;
+  border-left: 1px solid var(--color-rule);
+  padding-left: 32px;
+}
+
+.work-bento .stat-box .item .v {
+  font-family: var(--font-display);
+  font-weight: 200;
+  font-size: 44px;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  color: var(--color-ink-rich);
+}
+
+.work-bento .stat-box .item .l {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-ink-quiet);
+  margin-top: 8px;
+}
+
+.work-bento .bento {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: 220px;
+  gap: 14px;
+  grid-template-areas:
+    "feat feat feat hug hug siri"
+    "feat feat feat hug hug cin"
+    "schu schu schu olym olym more";
+}
+
+.work-bento .bento-tile {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-drafting);
+  cursor: pointer;
+  color: var(--color-canvas);
+  border: 1px solid var(--color-rule);
+  transition: transform 0.4s var(--ease-out);
+}
+
+.work-bento .bento-tile:hover { transform: translateY(-4px); }
+
+.work-bento .bento-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease-out), filter 0.35s;
+  filter: saturate(0.96) brightness(0.86);
+}
+
+.work-bento .bento-tile:hover img {
+  transform: scale(1.04);
+  filter: saturate(1.04) brightness(0.94);
+}
+
+.work-bento .bento-tile .overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(
+    180deg,
+    rgb(26 26 26 / 5%) 0%,
+    rgb(26 26 26 / 10%) 50%,
+    rgb(26 26 26 / 78%) 100%
+  );
+  pointer-events: none;
+}
+
+.work-bento .bento-tile .label {
+  position: absolute;
+  inset: auto 20px 18px;
+  z-index: 3;
+  color: var(--color-canvas);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.work-bento .bento-tile .label .index {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--color-wavelength);
+  text-transform: uppercase;
+}
+
+.work-bento .bento-tile .label .name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+}
+
+.work-bento .bento-tile .label .disc {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgb(255 255 255 / 70%);
+}
+
+.work-bento .bento-tile .label .outcome {
+  font-size: 13px;
+  color: rgb(255 255 255 / 85%);
+  line-height: 1.5;
+  margin: 6px 0 0;
+  max-width: 38ch;
+  display: none;
+}
+
+.work-bento .bento-tile.feature { grid-area: feat; }
+
+.work-bento .bento-tile.feature .label .name {
+  font-size: 44px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  max-width: 14ch;
+}
+
+.work-bento .bento-tile.feature .label .outcome { display: block; }
+
+.work-bento .bento-tile.tall { grid-area: hug; }
+
+.work-bento .bento-tile.tall .label .name { font-size: 26px; }
+
+.work-bento .bento-tile.s1 { grid-area: siri; }
+
+.work-bento .bento-tile.s2 { grid-area: cin; }
+
+.work-bento .bento-tile.wide { grid-area: schu; }
+
+.work-bento .bento-tile.wide .label .name { font-size: 26px; }
+
+.work-bento .bento-tile.s3 { grid-area: olym; }
+
+.work-bento .bento-more {
+  grid-area: more;
+  background: var(--color-ink-rich);
+  color: var(--color-canvas);
+  border: 1px solid var(--color-ink-rich);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.4s var(--ease-out);
+  text-decoration: none;
+}
+
+.work-bento .bento-more:hover {
+  background: var(--color-wavelength-deep);
+  transform: translateY(-4px);
+}
+
+.work-bento .bento-more .top {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-wavelength);
+}
+
+.work-bento .bento-more:hover .top { color: var(--color-canvas); }
+
+.work-bento .bento-more .num {
+  font-family: var(--font-display);
+  font-weight: 200;
+  font-size: 76px;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--color-canvas);
+}
+
+.work-bento .bento-more .arrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-canvas);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: gap 0.3s;
+}
+
+.work-bento .bento-more:hover .arrow { gap: 16px; }
+
+@media (max-width: 1100px) {
+  .work-bento .bento {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 200px;
+    grid-template-areas:
+      "feat feat feat hug"
+      "feat feat feat hug"
+      "siri cin schu schu"
+      "olym olym more more";
+  }
+}
+
+@media (max-width: 760px) {
+  .work-bento .work-header { grid-template-columns: 1fr; }
+
+  .work-bento .bento {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 180px;
+    grid-template-areas:
+      "feat feat"
+      "feat feat"
+      "hug hug"
+      "siri cin"
+      "schu schu"
+      "olym more";
+  }
+}

@@ -1,0 +1,40 @@
+/* wave-strip — decorative animated dual-stroke wave between sections.
+   Lifted from stardust/prototypes/home-b-v1.html `.wave-strip` selector
+   and rescoped under the .wave-strip block. */
+
+.wave-strip {
+  height: 96px;
+  background: var(--color-canvas);
+  overflow: hidden;
+  position: relative;
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.wave-strip svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200%;
+  height: 64px;
+  animation: wave-strip-scroll 22s linear infinite;
+}
+
+.wave-strip path {
+  fill: none;
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+
+.wave-strip .ink { stroke: var(--color-ink); }
+
+.wave-strip .accent { stroke: var(--color-wavelength); }
+
+@keyframes wave-strip-scroll {
+  from { transform: translate(-50%, -50%); }
+  to { transform: translate(-25%, -50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wave-strip svg { animation: none; }
+}

@@ -1,0 +1,75 @@
+/* team-hero — light page intro for /team.
+   Lifted from stardust/prototypes/team.html `section.intro`
+   and rescoped under .team-hero. */
+
+.team-hero {
+  padding: clamp(96px, 11vw, 160px) var(--section-padding-x) clamp(64px, 7vw, 96px);
+}
+
+.team-hero .inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.team-hero .meta {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-wavelength-deep);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.team-hero .meta::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: var(--color-wavelength-deep);
+}
+
+.team-hero h1 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-thin);
+  font-size: var(--heading-mega);
+  line-height: 0.94;
+  letter-spacing: -0.04em;
+  margin: 0 0 32px;
+  max-width: 22ch;
+}
+
+.team-hero h1 strong { font-weight: 700; }
+
+.team-hero h1 strong em {
+  font-style: normal;
+  color: var(--color-wavelength-deep);
+}
+
+.team-hero .lede {
+  font-size: 22px;
+  line-height: 1.5;
+  color: var(--color-ink-soft);
+  max-width: 56ch;
+  margin: 0 0 64px;
+}
+
+.team-hero .manifesto {
+  background: var(--color-drafting);
+  border-left: 3px solid var(--color-wavelength);
+  padding: 40px 56px;
+  margin-top: 56px;
+  max-width: 880px;
+}
+
+.team-hero .manifesto p {
+  font-size: 19px;
+  line-height: 1.62;
+  color: var(--color-ink-rich);
+  margin: 0;
+}
+
+.team-hero .manifesto p strong { font-weight: 600; }
+
+.team-hero .manifesto p + p { margin-top: 18px; }

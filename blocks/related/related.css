@@ -1,0 +1,118 @@
+/* related — light-bg adjacent-case-studies tile grid.
+   Lifted verbatim from stardust/prototypes/case-study-template.html
+   `section.related` and rescoped under .related. */
+
+.related {
+  padding: var(--section-padding-y) var(--section-padding-x);
+  border-top: 1px solid var(--color-rule);
+}
+
+.related .inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.related .module-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.related .module-tag .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-wavelength-deep);
+}
+
+.related h2 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-thin);
+  font-size: var(--heading-xl);
+  line-height: 0.96;
+  margin: 0 0 56px;
+}
+
+.related h2 strong { font-weight: var(--weight-bold); }
+
+.related .related-tiles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.related .rel-tile {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  cursor: pointer;
+  display: block;
+  transition: transform 0.4s var(--ease-out);
+}
+
+.related .rel-tile:hover { transform: translateY(-3px); }
+
+.related .rel-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.86);
+  transition: transform 0.8s var(--ease-out);
+}
+
+.related .rel-tile:hover img { transform: scale(1.04); }
+
+.related .rel-tile .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgb(26 26 26 / 0%) 40%,
+    rgb(26 26 26 / 78%) 100%
+  );
+}
+
+.related .rel-tile .label {
+  position: absolute;
+  inset: auto 24px 24px;
+  color: var(--color-canvas);
+}
+
+.related .rel-tile .label .name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 26px;
+  letter-spacing: -0.015em;
+  display: block;
+}
+
+.related .rel-tile .label .disc {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-wavelength);
+  display: block;
+  margin-bottom: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .related .rel-tile,
+  .related .rel-tile img {
+    transition: none;
+  }
+
+  .related .rel-tile:hover { transform: none; }
+
+  .related .rel-tile:hover img { transform: none; }
+}
+
+@media (max-width: 980px) {
+  .related .related-tiles { grid-template-columns: 1fr; }
+}

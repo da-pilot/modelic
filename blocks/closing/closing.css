@@ -1,0 +1,142 @@
+/* closing — dark mega-type CTA section with animated bg wave + 3-column
+   channels. Lifted from stardust/prototypes/home-b-v1.html `section.closing`
+   selectors and rescoped under .closing. Reused on every page; kept
+   self-contained. */
+
+.closing {
+  background: var(--color-ink-rich);
+  color: var(--color-canvas);
+  padding: clamp(120px, 16vw, 200px) var(--section-padding-x) 96px;
+  position: relative;
+  overflow: hidden;
+}
+
+.closing .bg-wave {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.18;
+  overflow: hidden;
+}
+
+.closing .bg-wave svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 220%;
+  height: 360px;
+  animation: closing-wave-drift 24s ease-in-out infinite alternate;
+}
+
+.closing .bg-wave path {
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.closing .bg-wave .a { stroke: var(--color-wavelength); }
+
+.closing .bg-wave .b { stroke: rgb(255 255 255 / 30%); }
+
+@keyframes closing-wave-drift {
+  from { transform: translate(-50%, -50%); }
+  to { transform: translate(-46%, -50%); }
+}
+
+.closing .inner {
+  position: relative;
+  z-index: 5;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.closing .section-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgb(255 255 255 / 50%);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.closing .section-eyebrow .dot {
+  width: 6px;
+  height: 6px;
+  background: var(--color-wavelength);
+  border-radius: 50%;
+}
+
+.closing h2 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-thin);
+  font-size: var(--heading-mega);
+  line-height: 0.92;
+  letter-spacing: var(--tracking-mega);
+  margin: 0 0 56px;
+  max-width: 16ch;
+  color: var(--color-canvas);
+}
+
+.closing h2 strong {
+  font-weight: 800;
+  color: var(--color-wavelength);
+}
+
+.closing .body {
+  font-size: 20px;
+  color: rgb(255 255 255 / 78%);
+  line-height: 1.55;
+  max-width: 50ch;
+  margin: 0 0 48px;
+}
+
+.closing .actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.closing .channels {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+  margin-top: 80px;
+  padding-top: 48px;
+  border-top: 1px solid rgb(255 255 255 / 12%);
+}
+
+.closing .ch-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-wavelength);
+  margin-bottom: 14px;
+}
+
+.closing .ch-val {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(20px, 2vw, 30px);
+  letter-spacing: -0.015em;
+  color: var(--color-canvas);
+  line-height: 1.2;
+}
+
+.closing .ch-val a:hover { color: var(--color-wavelength); }
+
+@media (max-width: 760px) {
+  .closing .channels {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .closing .bg-wave svg { animation: none; }
+}

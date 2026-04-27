@@ -1,0 +1,110 @@
+/* cadence — light 4-column engagement-phase grid.
+   Lifted from stardust/prototypes/approach.html `section.cadence`
+   and rescoped under .cadence. */
+
+.cadence {
+  padding: var(--section-padding-y) var(--section-padding-x);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.cadence .sec-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+  margin-bottom: 32px;
+}
+
+.cadence .sec-header .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-wavelength-deep);
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.cadence h2 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-thin);
+  font-size: var(--heading-xl);
+  line-height: 0.96;
+  letter-spacing: -0.035em;
+  margin: 0 0 64px;
+  max-width: 18ch;
+}
+
+.cadence h2 strong { font-weight: 700; }
+
+.cadence .cadence-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border-top: 2px solid var(--color-ink-rich);
+}
+
+.cadence .phase {
+  padding: 36px 24px 36px 0;
+  border-right: 1px solid var(--color-rule);
+}
+
+.cadence .phase:last-child {
+  border-right: 0;
+  padding-right: 0;
+}
+
+.cadence .phase:nth-child(2),
+.cadence .phase:nth-child(3),
+.cadence .phase:nth-child(4) {
+  padding-left: 24px;
+}
+
+.cadence .phase .num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: var(--tracking-eyebrow);
+  color: var(--color-wavelength-deep);
+  margin-bottom: 18px;
+}
+
+.cadence .phase h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: -0.015em;
+  margin: 0 0 12px;
+}
+
+.cadence .phase p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-ink-soft);
+  margin: 0;
+}
+
+.cadence .phase .duration {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-ink-quiet);
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--color-rule);
+}
+
+@media (max-width: 980px) {
+  .cadence .cadence-grid { grid-template-columns: 1fr 1fr; }
+
+  .cadence .phase:nth-child(3),
+  .cadence .phase:nth-child(4) {
+    border-top: 1px solid var(--color-rule);
+    margin-top: 12px;
+    padding-top: 36px;
+  }
+}

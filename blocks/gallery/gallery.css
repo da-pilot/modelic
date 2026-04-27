@@ -1,0 +1,39 @@
+/* gallery — full-bleed 2-column image grid.
+   Lifted verbatim from stardust/prototypes/case-study-template.html
+   `section.gallery` and rescoped under .gallery. */
+
+.gallery {
+  padding: 0;
+  max-width: 100%;
+  margin: 0;
+}
+
+.gallery .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.gallery figure {
+  margin: 0;
+}
+
+.gallery img {
+  width: 100%;
+  display: block;
+}
+
+.gallery figcaption {
+  padding: 20px var(--section-padding-x) 32px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+}
+
+@media (max-width: 980px) {
+  .gallery .grid { grid-template-columns: 1fr; }
+}

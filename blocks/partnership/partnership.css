@@ -1,0 +1,74 @@
+/* partnership — dark 2-column panel: eyebrow/headline left, body right.
+   Lifted from stardust/prototypes/service-template.html section.partnership
+   and rescoped under .partnership. */
+
+.partnership {
+  background: var(--color-ink-rich);
+  color: var(--color-canvas);
+  padding: var(--section-padding-y) var(--section-padding-x);
+}
+
+.partnership .inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.partnership .sec-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: rgb(255 255 255 / 55%);
+  margin-bottom: 28px;
+}
+
+.partnership .sec-header .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-wavelength);
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.partnership h2 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-thin);
+  font-size: var(--heading-xl);
+  line-height: 0.96;
+  letter-spacing: var(--tracking-display);
+  margin: 0;
+  max-width: 14ch;
+  color: var(--color-canvas);
+}
+
+.partnership h2 strong {
+  font-weight: 700;
+  color: var(--color-wavelength);
+}
+
+.partnership p {
+  font-size: 18px;
+  line-height: 1.62;
+  color: rgb(255 255 255 / 78%);
+  max-width: 50ch;
+  margin: 0 0 16px;
+}
+
+.partnership p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 980px) {
+  .partnership .inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}

@@ -1,0 +1,130 @@
+/* studio — dark "what happens after you send" 2-column block.
+   Lifted from stardust/prototypes/contact.html `section.studio` and
+   `section.closing-wave` (inlined as the block's own decorative
+   bottom divider per the locked plan). Rescoped under .studio. */
+
+.studio {
+  background: var(--color-ink-rich);
+  color: var(--color-canvas);
+  padding: var(--section-padding-y) var(--section-padding-x);
+  position: relative;
+  overflow: hidden;
+}
+
+.studio::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 800px 400px at 80% 50%, rgb(104 208 208 / 6%), transparent 65%);
+  pointer-events: none;
+}
+
+.studio .inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: end;
+}
+
+.studio .studio-words .sec-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: rgb(255 255 255 / 55%);
+  margin-bottom: 28px;
+}
+
+.studio .studio-words .sec-header .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-wavelength);
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.studio .studio-words h2 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-thin);
+  font-size: clamp(40px, 4.5vw, 72px);
+  line-height: 0.96;
+  letter-spacing: -0.035em;
+  margin: 0 0 24px;
+  max-width: 12ch;
+  color: var(--color-canvas);
+}
+
+.studio .studio-words h2 strong {
+  font-weight: 700;
+  color: var(--color-wavelength);
+}
+
+.studio .studio-words p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgb(255 255 255 / 78%);
+  margin: 0 0 16px;
+}
+
+.studio .studio-words p:last-child { margin-bottom: 0; }
+
+.studio .studio-stats {
+  display: flex;
+  gap: 32px;
+  margin-top: 36px;
+  padding-top: 24px;
+  border-top: 1px solid rgb(255 255 255 / 12%);
+}
+
+.studio .studio-stat .label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-wavelength);
+  margin-bottom: 6px;
+}
+
+.studio .studio-stat .v {
+  font-family: var(--font-display);
+  font-weight: 200;
+  font-size: 14px;
+  color: var(--color-canvas);
+  line-height: 1.4;
+}
+
+/* Decorative wave divider — lifted from contact.html `.closing-wave`
+   and scoped under .studio per the locked plan (no separate
+   closing-wave block). */
+.studio .closing-wave {
+  padding: 80px var(--section-padding-x) 64px;
+  background: var(--color-canvas);
+  display: flex;
+  justify-content: center;
+}
+
+.studio .closing-wave svg {
+  width: 240px;
+  height: 56px;
+}
+
+.studio .closing-wave path {
+  fill: none;
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.studio .closing-wave .a { stroke: var(--color-ink-rich); }
+.studio .closing-wave .b { stroke: var(--color-wavelength); }
+
+@media (max-width: 980px) {
+  .studio .inner { grid-template-columns: 1fr; }
+}
