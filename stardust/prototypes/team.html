@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- stardust:provenance
+  generated_by: prototype
+  date: 2026-04-26
+  source_briefing: stardust/briefings/team.md
+  source_brand: stardust/brand-profile.json
+  variant: home-b-v1 design language
+  imagery_mode: mixed (Gemini-generated team portraits + Modelic case-study photography for the recent-work block)
+  copy_provenance:
+    - hero, manifesto, working-with-us, careers nudge, closing CTA: from briefings/team.md
+    - team member names + bios: synthesized placeholders to demonstrate the structure (real names supplied by Modelic per briefing)
+-->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Team — Modelic</title>
+<meta name="description" content="The people you'd meet on the call are the people who ship the work." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --color-canvas: #FFFFFF; --color-ink: #1A1A1A; --color-ink-rich: #242424;
+    --color-ink-soft: rgba(36,36,36,0.66); --color-ink-quiet: rgba(36,36,36,0.42);
+    --color-rule: rgba(36,36,36,0.08); --color-wavelength: #68D0D0;
+    --color-wavelength-deep: #2FAEAE; --color-foam: #CCE4E4; --color-drafting: #F4F4F2;
+    --font-body: 'Inter', sans-serif; --font-display: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+    --heading-mega: clamp(48px, 6.5vw, 96px);
+    --heading-xl: clamp(32px, 3.6vw, 56px);
+    --section-padding-y: clamp(96px, 11vw, 160px);
+    --section-padding-x: clamp(24px, 4vw, 56px);
+    --max-width: 1320px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--color-canvas); color: var(--color-ink); font-family: var(--font-body); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; padding-top: 56px; }
+  a { color: inherit; text-decoration: none; }
+  ::selection { background: var(--color-wavelength); color: var(--color-ink-rich); }
+
+  nav.top { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.85); backdrop-filter: blur(20px) saturate(1.4); border-bottom: 1px solid var(--color-rule); padding: 14px 0; }
+  nav.top .inner { max-width: 1440px; margin: 0 auto; padding: 0 var(--section-padding-x); display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  nav.top .lockup img { height: 22px; }
+  nav.top .lockup { display: flex; align-items: center; gap: 14px; }
+  nav.top ul.links { list-style: none; margin: 0; padding: 0; display: flex; gap: 28px; }
+  nav.top ul.links a { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; }
+  nav.top ul.links a.current { color: var(--color-wavelength-deep); }
+  nav.top .cta-btn { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 11px 18px; background: var(--color-ink-rich); color: var(--color-canvas); display: inline-flex; align-items: center; gap: 8px; }
+
+  .sec-header { display: flex; align-items: flex-start; gap: 14px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-ink-soft); margin-bottom: 28px; }
+  .sec-header .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--color-wavelength-deep); margin-top: 4px; flex-shrink: 0; }
+  .sec-header.on-dark { color: rgba(255,255,255,0.55); }
+  .sec-header.on-dark .dot { background: var(--color-wavelength); }
+
+  /* HERO + MANIFESTO */
+  section.intro { padding: clamp(96px, 11vw, 160px) var(--section-padding-x) clamp(64px, 7vw, 96px); max-width: var(--max-width); margin: 0 auto; }
+  .intro .meta { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-wavelength-deep); display: flex; align-items: center; gap: 14px; margin-bottom: 28px; }
+  .intro .meta::before { content: ""; width: 28px; height: 1px; background: var(--color-wavelength-deep); }
+  .intro h1 { font-family: var(--font-display); font-weight: 100; font-size: var(--heading-mega); line-height: 0.94; letter-spacing: -0.04em; margin: 0 0 32px; max-width: 22ch; }
+  .intro h1 strong { font-weight: 700; }
+  .intro h1 strong em { font-style: normal; color: var(--color-wavelength-deep); }
+  .intro .lede { font-size: 22px; line-height: 1.5; color: var(--color-ink-soft); max-width: 56ch; margin: 0 0 64px; }
+  .manifesto { background: var(--color-drafting); border-left: 3px solid var(--color-wavelength); padding: 40px 56px; margin-top: 56px; max-width: 880px; }
+  .manifesto p { font-size: 19px; line-height: 1.62; color: var(--color-ink-rich); margin: 0; }
+  .manifesto p strong { font-weight: 600; }
+  .manifesto p + p { margin-top: 18px; }
+
+  /* TEAM GRID */
+  section.team { padding: var(--section-padding-y) var(--section-padding-x); max-width: var(--max-width); margin: 0 auto; }
+  .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .person { display: flex; flex-direction: column; gap: 20px; }
+  .person .portrait { aspect-ratio: 4/5; overflow: hidden; background: var(--color-drafting); position: relative; }
+  .person .portrait img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s; }
+  .person:hover .portrait img { transform: scale(1.03); }
+  .person .name { font-family: var(--font-display); font-weight: 600; font-size: 24px; letter-spacing: -0.015em; margin: 0; line-height: 1.1; }
+  .person .role { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-wavelength-deep); margin: -6px 0 0; }
+  .person .bio { font-size: 16px; line-height: 1.6; color: var(--color-ink-soft); margin: 0; }
+  .person .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: -4px; }
+  .person .tag { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; padding: 5px 10px; border: 1px solid var(--color-rule); color: var(--color-ink-soft); }
+
+  /* WORKING WITH US (DARK) */
+  section.work-style { background: var(--color-ink-rich); color: var(--color-canvas); padding: var(--section-padding-y) var(--section-padding-x); position: relative; overflow: hidden; }
+  section.work-style::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 800px 400px at 80% 30%, rgba(104,208,208,0.06), transparent 65%); pointer-events: none; }
+  section.work-style .inner { max-width: var(--max-width); margin: 0 auto; position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1.2fr; gap: 64px; align-items: start; }
+  section.work-style h2 { font-family: var(--font-display); font-weight: 100; font-size: var(--heading-xl); line-height: 0.96; letter-spacing: -0.035em; margin: 0; max-width: 14ch; color: var(--color-canvas); }
+  section.work-style h2 strong { font-weight: 700; color: var(--color-wavelength); }
+  section.work-style p { font-size: 18px; line-height: 1.62; color: rgba(255,255,255,0.78); margin: 0 0 20px; }
+  section.work-style p:last-child { margin-bottom: 0; }
+
+  /* RECENT WORK */
+  section.recent { padding: var(--section-padding-y) var(--section-padding-x); max-width: var(--max-width); margin: 0 auto; }
+  section.recent h2 { font-family: var(--font-display); font-weight: 100; font-size: var(--heading-xl); line-height: 0.96; letter-spacing: -0.035em; margin: 0 0 56px; }
+  section.recent h2 strong { font-weight: 700; }
+  .recent-tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .rec-tile { position: relative; aspect-ratio: 16/10; overflow: hidden; cursor: pointer; transition: transform .4s; }
+  .rec-tile:hover { transform: translateY(-3px); }
+  .rec-tile img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.86); transition: transform .8s; }
+  .rec-tile:hover img { transform: scale(1.04); }
+  .rec-tile .overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(26,26,26,0) 40%, rgba(26,26,26,0.78) 100%); }
+  .rec-tile .label { position: absolute; inset: auto 22px 22px 22px; color: var(--color-canvas); }
+  .rec-tile .label .name { font-family: var(--font-display); font-weight: 600; font-size: 24px; letter-spacing: -0.015em; }
+  .rec-tile .label .disc { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-wavelength); display: block; margin-bottom: 4px; }
+
+  /* CAREERS NUDGE */
+  section.careers { padding: 80px var(--section-padding-x); border-top: 1px solid var(--color-rule); border-bottom: 1px solid var(--color-rule); background: var(--color-foam); }
+  section.careers .inner { max-width: var(--max-width); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+  section.careers p { font-family: var(--font-display); font-size: clamp(20px, 1.8vw, 26px); font-weight: 300; line-height: 1.4; margin: 0; max-width: 56ch; color: var(--color-ink-rich); }
+  section.careers p em { font-style: normal; color: var(--color-wavelength-deep); font-weight: 500; }
+
+  /* CLOSING */
+  section.closing { background: var(--color-ink-rich); color: var(--color-canvas); padding: clamp(120px, 14vw, 180px) var(--section-padding-x) 96px; position: relative; overflow: hidden; }
+  section.closing .bg-wave { position: absolute; inset: 0; z-index: 1; opacity: 0.16; overflow: hidden; }
+  section.closing .bg-wave svg { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 220%; height: 360px; }
+  section.closing .bg-wave path { fill: none; stroke-width: 2; stroke-linecap: round; }
+  section.closing .bg-wave .a { stroke: var(--color-wavelength); }
+  section.closing .bg-wave .b { stroke: rgba(255,255,255,0.3); }
+  section.closing .inner { position: relative; z-index: 5; max-width: var(--max-width); margin: 0 auto; }
+  section.closing h2 { font-family: var(--font-display); font-weight: 100; font-size: var(--heading-mega); line-height: 0.92; letter-spacing: -0.04em; margin: 0 0 36px; max-width: 16ch; }
+  section.closing h2 strong { font-weight: 800; color: var(--color-wavelength); }
+  section.closing .body { font-size: 19px; color: rgba(255,255,255,0.78); line-height: 1.55; max-width: 50ch; margin: 0 0 36px; }
+
+  .btn-loud { display: inline-flex; align-items: center; gap: 12px; padding: 18px 28px; background: var(--color-wavelength); color: var(--color-ink-rich); border: 1px solid var(--color-wavelength); font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; transition: background .25s, color .25s; }
+  .btn-loud:hover { background: var(--color-canvas); border-color: var(--color-canvas); }
+  .btn-loud svg { width: 14px; height: 14px; transition: transform .3s; }
+  .btn-loud:hover svg { transform: translateX(4px); }
+  .btn-text { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; padding: 11px 18px; background: var(--color-ink-rich); color: var(--color-canvas); display: inline-flex; align-items: center; gap: 8px; }
+  .btn-text:hover { background: var(--color-wavelength-deep); }
+
+  footer.bottom { background: var(--color-ink); color: rgba(255,255,255,0.62); padding: 64px var(--section-padding-x) 36px; }
+  footer.bottom .inner { max-width: 1440px; margin: 0 auto; display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 48px; }
+  footer.bottom h4 { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-wavelength); margin: 0 0 18px; }
+  footer.bottom ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+  footer.bottom a { color: rgba(255,255,255,0.7); font-size: 13px; }
+  footer.bottom .lockup img { height: 26px; filter: invert(1); margin-bottom: 16px; }
+  footer.bottom .lockup p { margin: 0; font-size: 13px; line-height: 1.55; max-width: 32ch; }
+  footer.bottom .colophon { grid-column: 1 / -1; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 24px; margin-top: 28px; display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.32); }
+
+  @media (max-width: 980px) {
+    .team-grid { grid-template-columns: 1fr 1fr; }
+    section.work-style .inner { grid-template-columns: 1fr; }
+    .recent-tiles { grid-template-columns: 1fr; }
+    footer.bottom .inner { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) { .team-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<header>
+<nav class="top">
+  <div class="inner">
+    <a class="lockup" href="/"><img src="images/modelic-logo.png" alt="Modelic" /></a>
+    <ul class="links">
+      <li><a href="/work">Work</a></li>
+      <li><a href="/services/commerce">Services</a></li>
+      <li><a href="/approach">Approach</a></li>
+      <li><a href="/team" class="current">Team</a></li>
+    </ul>
+    <a class="cta-btn" href="/contact">Start a project<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
+  </div>
+</nav>
+</header>
+
+<main>
+
+<section class="intro">
+  <div class="meta">// The team</div>
+  <h1>The people you'd meet on the call are the people who <strong>ship <em>the work.</em></strong></h1>
+  <p class="lede">Modelic is small on purpose. Every project is led, designed, and engineered by the senior people on this page.</p>
+  <div class="manifesto">
+    <p><strong>We're a craft shop, not a staffing agency.</strong> We don't grow by adding more people — we grow by getting better at the work. If you hire us, you get the people on this page, on every meeting, through ship.</p>
+    <p>Pacific time mornings, Mountain time afternoons. Slack-light, video-heavy, document-everything.</p>
+  </div>
+</section>
+
+<section class="team">
+  <div class="sec-header"><span class="dot"></span><span>// 02 / The studio</span></div>
+
+  <div class="team-grid">
+    <div class="person">
+      <div class="portrait"><img src="images/team-portrait-1.png" alt="Lead designer at a digital tablet, sketching at their workstation." /></div>
+      <h3 class="name">[Designer Name]</h3>
+      <p class="role">Lead designer · brand and identity</p>
+      <p class="bio">I lead brand and visual systems work. Twelve years of agency, two of which inside a fashion-house in-house team. I think about type and rhythm before color.</p>
+      <div class="tags"><span class="tag">Brand systems</span><span class="tag">Editorial</span><span class="tag">Type</span></div>
+    </div>
+
+    <div class="person">
+      <div class="portrait"><img src="images/team-portrait-2.png" alt="Senior engineer mid-conversation, pointing at code on screen." /></div>
+      <h3 class="name">[Engineer Name]</h3>
+      <p class="role">Senior engineer · commerce + accessibility</p>
+      <p class="bio">I lead the engineering work on commerce projects. Stencil and Shopify themes, headless when it earns its place, accessibility as a craft. Before Modelic I shipped checkout flows at scale.</p>
+      <div class="tags"><span class="tag">BigCommerce</span><span class="tag">Shopify</span><span class="tag">WCAG</span></div>
+    </div>
+
+    <div class="person">
+      <div class="portrait" style="background: linear-gradient(135deg, var(--color-foam), var(--color-drafting));">
+        <img src="images/team-real/team-2.jpg" alt="Modelic team portrait." style="filter: saturate(0.5);" />
+      </div>
+      <h3 class="name">[Lead Engineer Name]</h3>
+      <p class="role">Lead engineer · platforms</p>
+      <p class="bio">Architecture and platform decisions. I'm the person who'll tell you when the platform you've picked is wrong for what you're trying to do — and the person who'll help you change it.</p>
+      <div class="tags"><span class="tag">Architecture</span><span class="tag">Headless</span><span class="tag">PIM</span></div>
+    </div>
+
+    <div class="person">
+      <div class="portrait" style="background: linear-gradient(135deg, var(--color-drafting), var(--color-foam));">
+        <img src="images/team-real/team-3.jpg" alt="Modelic team portrait." style="filter: saturate(0.5);" />
+      </div>
+      <h3 class="name">[Founder Name]</h3>
+      <p class="role">Founder · design + strategy</p>
+      <p class="bio">I started Modelic in 2014 with a small group of people who'd worked together at a larger agency and wanted to keep the craft, not the layers. Twelve years on, that's still the project.</p>
+      <div class="tags"><span class="tag">Strategy</span><span class="tag">Design</span><span class="tag">Founder</span></div>
+    </div>
+
+    <div class="person">
+      <div class="portrait" style="background: var(--color-drafting); display: flex; align-items: center; justify-content: center;">
+        <span style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-ink-quiet);">// Portrait pending</span>
+      </div>
+      <h3 class="name">[Designer Name]</h3>
+      <p class="role">Designer · UX + interaction</p>
+      <p class="bio">UX research, interaction design, design QA through ship. I'm the person who runs the user-research read-out — and the person who'll push back when the data says we're wrong.</p>
+      <div class="tags"><span class="tag">UX research</span><span class="tag">Interaction</span></div>
+    </div>
+
+    <div class="person">
+      <div class="portrait" style="background: var(--color-drafting); display: flex; align-items: center; justify-content: center;">
+        <span style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-ink-quiet);">// Portrait pending</span>
+      </div>
+      <h3 class="name">[Engineer Name]</h3>
+      <p class="role">Engineer · accessibility specialist</p>
+      <p class="bio">I run the accessibility audits and remediation work. NVDA, JAWS, VoiceOver — I use the tools our users use, daily. WCAG conformance is the floor, not the goal.</p>
+      <div class="tags"><span class="tag">WCAG</span><span class="tag">Audit</span><span class="tag">A11y</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="work-style">
+  <div class="inner">
+    <div>
+      <div class="sec-header on-dark"><span class="dot"></span><span>// 03 / Working with us</span></div>
+      <h2>How a project <strong>actually works.</strong></h2>
+    </div>
+    <div>
+      <p>A typical engagement runs 8–14 weeks for a focused build, longer for a partnership relationship. Every project starts with a kickoff that names the metric we're moving — together — and ends with a handoff that leaves your internal team able to extend the work without us.</p>
+      <p>Weekly demos, shared documents in your tools, decisions captured in plain language. We don't run two parallel agency processes — yours and ours. We adopt yours where it's good and bring our own only where there's a gap.</p>
+      <p>If a project goes wrong, we say so on the next call. If we're going to miss a date, we say it the moment we know. That's the cornerstone.</p>
+    </div>
+  </div>
+</section>
+
+<section class="recent">
+  <div class="sec-header"><span class="dot"></span><span>// 04 / Recent work</span></div>
+  <h2>Two projects shipped <strong>by these people, recently.</strong></h2>
+  <div class="recent-tiles">
+    <a class="rec-tile" href="/case-studies/utah-food-bank">
+      <img src="images/case-studies/utah-food-bank-1.jpg" alt="Utah Food Bank distribution event." />
+      <div class="overlay"></div>
+      <div class="label"><span class="disc">Accessibility · Commerce</span><span class="name">Utah Food Bank</span></div>
+    </a>
+    <a class="rec-tile" href="/case-studies/badgley-mischka">
+      <img src="images/case-studies/badgley-mischka-1.jpg" alt="Editorial fashion shot for Badgley Mischka." />
+      <div class="overlay"></div>
+      <div class="label"><span class="disc">Brand · Commerce</span><span class="name">Badgley Mischka</span></div>
+    </a>
+  </div>
+</section>
+
+<section class="careers">
+  <div class="inner">
+    <p>We're <em>occasionally hiring.</em> If the work and the register here ring true, we'd like to meet you.</p>
+    <a href="/careers" class="btn-text">Open roles<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="bg-wave" aria-hidden="true">
+    <svg viewBox="0 0 1200 360" preserveAspectRatio="none">
+      <path class="a" d="M0,180 Q100,40 200,180 T400,180 T600,180 T800,180 T1000,180 T1200,180" />
+      <path class="b" d="M0,180 Q100,320 200,180 T400,180 T600,180 T800,180 T1000,180 T1200,180" />
+    </svg>
+  </div>
+  <div class="inner">
+    <div class="sec-header on-dark"><span class="dot"></span><span>// 05 / Get in touch</span></div>
+    <h2>Want to <strong>meet the team?</strong></h2>
+    <p class="body">Send us an email or call us at 801-363-0101. We're here weekdays, 8:30 am – 5:30 pm Mountain Time.</p>
+    <a href="/contact" class="btn-loud">Start a project conversation<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
+  </div>
+</section>
+</main>
+
+<footer class="bottom">
+  <div class="inner">
+    <div class="lockup"><img src="images/modelic-logo.png" alt="Modelic" /><p>A craft design and engineering shop. Salt Lake City, since 2014.</p></div>
+    <div><h4>// Services</h4><ul><li><a href="/services/development">Development</a></li><li><a href="/services/design">Design</a></li><li><a href="/services/commerce">Commerce</a></li><li><a href="/services/accessibility">Accessibility</a></li><li><a href="/services/app-development">App Development</a></li></ul></div>
+    <div><h4>// Studio</h4><ul><li><a href="/work">Work</a></li><li><a href="/team">Team</a></li><li><a href="/careers">Careers</a></li><li><a href="/blog">Blog</a></li></ul></div>
+    <div><h4>// Contact</h4><ul><li><a href="tel:+18013630101">801-363-0101</a></li><li><a href="mailto:hello@modelic.io">hello@modelic.io</a></li><li>Salt Lake City, UT</li><li>Weekdays · 8:30 – 5:30 MT</li></ul></div>
+    <div class="colophon"><span>© 2026 Modelic</span><span>Privacy · Cookies</span></div>
+  </div>
+</footer>
+
+</body>
+</html>

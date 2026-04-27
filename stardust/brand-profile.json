@@ -1,0 +1,373 @@
+{
+  "_provenance": {
+    "generated_by": "brand",
+    "date": "2026-04-26",
+    "source": "https://www.modelic.io",
+    "extraction_method": "Playwright (Chromium, 1440x900 @ 2x DPR, networkidle + 1.5s settle); logo color sampled from PNG via PIL.",
+    "synthesized_inputs": [
+      "color role names (Wavelength, Console, Foam, Drafting, Canvas) — invented from agency/wave subject matter, not labeled on source",
+      "typography.heading.lineHeight and letterSpacing — captured from computed styles but expressed as ratios/em",
+      "typography.eyebrow rules — inferred from observed uppercase Inter 600 12.48px nav and CTA tags",
+      "typography.accent — page has no italic display accent in use; field set null rather than invented",
+      "voice.character, traits, antiTraits — composed from extracted copy patterns (warmth + craft language); not labelled on source",
+      "voice.examples.dont — LLM-composed counter-examples to match extracted voice rules",
+      "tone.description, writingGoals, cleverVsClear — inferred from copy",
+      "contentPillars — derived from nav (Development, Design, BigCommerce & Shopify, Team, Blog) and case-study language",
+      "personas — not enumerated on source; left empty",
+      "photography.rules and donts — generalised from the single hero (laptop + people in workspace under teal wash)",
+      "componentStyle.borderRadius.default — site uses 0px (sharp); recorded verbatim",
+      "logo.clearSpace, logo.donts — not stated on source; suggested standard defaults",
+      "motifs descriptions/usage — observed visually in screenshots, descriptive language is composed"
+    ],
+    "screenshots": [
+      "/tmp/modelic-extract/hero.png",
+      "/tmp/modelic-extract/full.png"
+    ],
+    "note": "Captured as-is for a design refresh. The wave mark, soft teal, lowercase wordmark, and big light-weight headings are the recognisable bones to preserve or evolve. Inter 300 in display sizes and 0px border radii are the dated parts most likely to change in the refresh."
+  },
+
+  "_divergence": {
+    "toolkit_version": "v0.6.0",
+    "seed": {
+      "decade": null,
+      "craft": null,
+      "register": null,
+      "ground": null,
+      "picked_by": "not-applicable",
+      "overrides": [],
+      "hash_input": null
+    },
+    "font_deck": null,
+    "palette_source": {
+      "method": "extracted-from-source",
+      "library_version": null,
+      "library_source": null,
+      "description_used": null,
+      "classification": {
+        "energy": null,
+        "contrast": null,
+        "saturation_level": null,
+        "hue_bias": null,
+        "ground_family": null
+      },
+      "candidates_shown": [],
+      "recommended_index": null,
+      "picked_index": null,
+      "picked_palette_name": null,
+      "picked_palette_source": null
+    },
+    "anti_toolbox_count": 0,
+    "anti_toolbox_hits": [],
+    "divergence_justifications": [],
+    "off_toolbox_moves": [],
+    "references_used": [
+      {
+        "source": "https://www.modelic.io",
+        "kind": "marketing-site",
+        "trends_extracted": [],
+        "trend_tags": {}
+      }
+    ],
+    "divergence_warning": false
+  },
+
+  "name": "Modelic",
+  "philosophy": "A full-spectrum design and development agency that cultivates smart strategies for branding, UX, e-commerce, and web accessibility — partners in sustainable growth, not a vending machine.",
+
+  "logo": {
+    "path": "stardust/assets/logo.png",
+    "format": "png",
+    "source": "img-tag",
+    "variants": [],
+    "clearSpace": "Maintain clear space equal to the cap height of the wordmark on all sides.",
+    "donts": [
+      "Do not place the wordmark on backgrounds that obscure the wave mark's teal accent.",
+      "Do not stretch, recolor the wordmark to non-Console values, or separate the wave from the wordmark in horizontal lockup.",
+      "Do not set the lockup smaller than 96px wide on screen — the inter-wave detail collapses."
+    ]
+  },
+
+  "colors": {
+    "primary": [
+      {
+        "name": "Wavelength Teal",
+        "hex": "#68D0D0",
+        "pantone": null,
+        "role": "Wavelength",
+        "use": "logo accent wave, hero overlay base, illustrative tint, soft panels behind numerals"
+      },
+      {
+        "name": "Console",
+        "hex": "#242424",
+        "pantone": null,
+        "role": "Console",
+        "use": "wordmark and wave silhouette, headlines, body ink, CTA fill, footer ground"
+      },
+      {
+        "name": "Canvas",
+        "hex": "#FFFFFF",
+        "pantone": null,
+        "role": "Canvas",
+        "use": "page ground, copy on Console, content cards"
+      }
+    ],
+    "secondary": [
+      {
+        "name": "Foam",
+        "hex": "#CCE4E4",
+        "role": "Foam",
+        "use": "hero photo wash, soft tenet panel grounds"
+      },
+      {
+        "name": "Drafting",
+        "hex": "#F7F7F7",
+        "role": "Drafting",
+        "use": "header on scroll, neutral panel ground separating sections"
+      }
+    ],
+    "web": [
+      {
+        "name": "Footer Whisper",
+        "hex": "#999999",
+        "role": "Footer Whisper",
+        "use": "footer body copy on Console (rendered as rgba(255,255,255,0.4))"
+      }
+    ],
+    "gradients": []
+  },
+
+  "componentStyle": {
+    "borderRadius": {
+      "default": "0px",
+      "usage": "Sharp, unrounded corners on buttons, cards, and image frames — a deliberate counterpoint to the curved wave mark."
+    },
+    "maxWidth": "1280px",
+    "pagePadding": "32px",
+    "navbarHeight": "72px",
+    "buttons": {
+      "patterns": [
+        {
+          "name": "Primary (Console-filled)",
+          "style": "background #242424; color #FFFFFF; border-radius 0; padding ~14px 20px; Inter 600; 12.48px; uppercase; letter-spacing ~0.08em",
+          "example": "SEE HOW WE DO IT"
+        },
+        {
+          "name": "Eyebrow link",
+          "style": "background transparent; color #242424; padding 9.36px 0; Inter 600; 12.48px; uppercase; no border, no radius",
+          "example": "VIEW ALL WORK"
+        },
+        {
+          "name": "Nav item",
+          "style": "background transparent; color #242424; padding 9.36px 12.48px; Inter 600; 12.48px; uppercase",
+          "example": "DEVELOPMENT"
+        }
+      ],
+      "dualCTA": null
+    }
+  },
+
+  "motifs": [
+    {
+      "name": "Modelic wave",
+      "description": "Two interleaved sine curves forming a wordmark glyph — Console-black silhouette with a Wavelength-teal accent wave riding behind it. Reads as oscillation, signal, model + logic.",
+      "usage": "Always paired with the wordmark in the primary lockup. May be lifted as a standalone graphic mark at small sizes (favicon, app icon) or animated subtly on first load. Do not separate from the wordmark in horizontal lockup contexts."
+    },
+    {
+      "name": "Pale teal photo wash",
+      "description": "Hero and case-study photography sits beneath a translucent Foam (#CCE4E4) overlay, with a faint waveform / orbital line pattern on top. Effect is dreamy, considered, agency-calm.",
+      "usage": "Hero sections and case-study openers. Avoid on portrait close-ups where skin tones should read true."
+    },
+    {
+      "name": "Display numerals",
+      "description": "Tenets and process steps marked with very large Inter 300 numerals (1, 2, 3) set inside Foam panels and offset against Console copy.",
+      "usage": "Any list-of-N section: principles, process steps, services. One numeral per panel, set generously."
+    },
+    {
+      "name": "Lowercase wordmark",
+      "description": "The wordmark is always set lowercase, no exceptions. The brand name in running copy follows the page's title-case convention but the wordmark itself is fixed lowercase.",
+      "usage": "Logo lockups only. Sentence-case 'Modelic' is correct in body copy."
+    }
+  ],
+
+  "typography": {
+    "heading": {
+      "family": "Inter",
+      "weights": ["300"],
+      "lineHeight": 1.24,
+      "letterSpacing": "0.01px",
+      "usage": "Section H2s at ~47px; subhead H3s at ~28px. Light weight is intentional — gives an airy, considered tone. The refresh will likely tighten this; the current state runs Inter 300 large which feels dated in 2026."
+    },
+    "subheading": {
+      "family": "Inter",
+      "weight": "300",
+      "usage": "H3 below H2 hero or case-study panel — ~28px / 1.44 line-height."
+    },
+    "body": {
+      "family": "Inter",
+      "weight": "300",
+      "opacity": 1.0,
+      "usage": "18–23px body. Light weight body is unusual; pairs with light headings for a consistent airy register."
+    },
+    "accent": {
+      "family": null,
+      "weight": null,
+      "usage": "No italic display accent in use on the current site."
+    },
+    "eyebrow": {
+      "family": "Inter",
+      "weight": "600",
+      "transform": "uppercase",
+      "usage": "Nav, CTAs, and eyebrow tags at 12.48px with letter-spacing ~0.08em. The single shift to Inter 600 marks structural scaffolding (nav, action) against the otherwise Inter-300 page."
+    },
+    "button": {
+      "family": "Inter",
+      "weight": "600",
+      "usage": "Same recipe as eyebrow — uppercase, 12.48px, letter-spaced. No mixed case in CTAs."
+    },
+    "rules": [
+      "All CTAs and nav items are uppercase Inter 600 at ~12.48px.",
+      "Headlines and body share Inter 300 — the brand reads as tonally flat in weight; structural emphasis comes from size and the 600 eyebrow only.",
+      "The wordmark is lowercase and uses a heavier custom-feeling sans (rounded, geometric) that is heavier than Inter 600 — treat it as a discrete asset, not as set type.",
+      "Body copy runs at full ink (no opacity reduction)."
+    ]
+  },
+
+  "photography": {
+    "style": "Workspace and team-in-context: people at laptops, focused, shot from a slightly elevated angle. Cool color cast. Editorial calm, not stocky.",
+    "rules": [
+      "Always overlay hero imagery with the Foam wash and a subtle waveform line graphic.",
+      "Subjects are mid-action (typing, sketching) rather than posed.",
+      "Cool to neutral light. Avoid warm golden-hour tones — they fight the teal."
+    ],
+    "donts": [
+      "No isolated product shots on white.",
+      "No stock-feeling handshakes, conference rooms, or generic 'team in a meeting' setups.",
+      "No saturated brand colors imported from clients into Modelic-owned imagery."
+    ],
+    "social": null
+  },
+
+  "voice": {
+    "character": "A craft agency that talks plainly, with quiet confidence. The voice is partner-first, slightly self-effacing, and earnest about communication.",
+    "traits": [
+      "Plain-spoken",
+      "Earnest",
+      "Partner-minded",
+      "Craft-respecting",
+      "Slightly self-effacing"
+    ],
+    "antiTraits": [
+      "Salesy",
+      "Hype-y",
+      "Agency-jargon-laden",
+      "Boastful",
+      "Disposable / vending-machine"
+    ],
+    "examples": {
+      "do": [
+        {
+          "text": "Modelic is a full-spectrum design and development agency that cultivates smart strategies for branding, UX, e-commerce, and web accessibility.",
+          "context": "Names what we do without superlatives. 'Cultivates' lands warmer than 'delivers' or 'drives'."
+        },
+        {
+          "text": "We are not a vending machine. We want to be your partners in sustainable growth.",
+          "context": "Self-effacing line that defines the relationship by naming what we won't be."
+        },
+        {
+          "text": "Solid partnerships facilitate great projects.",
+          "context": "Process page tenet — clean declarative, no marketing fizz."
+        },
+        {
+          "text": "Hire us because we excel in something you cannot do. We'll utilize our skills to complement your areas of expertise.",
+          "context": "Acknowledges client's strengths first, ours second."
+        },
+        {
+          "text": "We are here to support your narrative. Let's work together to tell your story and celebrate what makes your company unique.",
+          "context": "Partner-first phrasing. 'Support your narrative' is the agency posture."
+        }
+      ],
+      "dont": [
+        {
+          "text": "We're a world-class digital agency delivering best-in-class solutions.",
+          "context": "Generic superlatives — exactly the agency-speak the brand defines itself against."
+        },
+        {
+          "text": "Unlock explosive growth with our proprietary methodology.",
+          "context": "Hype + jargon. The brand's self-effacing register makes 'unlock' and 'explosive' feel like another voice entirely."
+        },
+        {
+          "text": "Submit your project request and our team will respond within 24 hours.",
+          "context": "Vending-machine framing — exactly the relationship the brand says it isn't."
+        }
+      ]
+    },
+    "rules": [
+      "Lead with the partnership, not the deliverable.",
+      "Plain verbs over agency verbs: 'help', 'build', 'design' beats 'leverage', 'deliver', 'drive'.",
+      "If a sentence could appear on a competitor agency's site verbatim, rewrite it.",
+      "Self-effacing lines are part of the voice — keep them.",
+      "Title-case headlines ('Our Tenets for Partnerships'); sentence-case body. Wordmark stays lowercase."
+    ]
+  },
+
+  "tone": {
+    "description": "Tone stays calm and partner-minded across contexts. Process pages are declarative; case studies are story-led; contact copy is warm and specific (real phone number, real hours).",
+    "writingGoals": [
+      {
+        "goal": "To partner",
+        "description": "Position Modelic as a collaborator inside the client's team, not a supplier across the table."
+      },
+      {
+        "goal": "To respect craft",
+        "description": "Honor the client's expertise; bring our craft to complement, not replace."
+      },
+      {
+        "goal": "To be findable in plain language",
+        "description": "Real phone number, real hours, real services. No cute placeholders."
+      }
+    ],
+    "cleverVsClear": {
+      "clever": "Sparingly — the 'we are not a vending machine' line is the brand's allowance for a touch of wit. One per page.",
+      "clear": "Default. Service nav, process tenets, contact lines, and CTAs are all plainly labelled."
+    }
+  },
+
+  "contentPillars": [
+    {
+      "name": "Development",
+      "description": "Engineering for e-commerce platforms (Shopify, BigCommerce, WordPress) and accessibility-conformant builds."
+    },
+    {
+      "name": "Design",
+      "description": "Branding, UX, and visual design that complements the engineering work."
+    },
+    {
+      "name": "E-commerce",
+      "description": "Conversion-focused commerce work — case studies are framed as 'Conversion Case Study'."
+    },
+    {
+      "name": "The People",
+      "description": "Team-led stories. Modelic frames the agency as a group of passionate, energetic, creative people."
+    },
+    {
+      "name": "Tenets / Process",
+      "description": "How we partner. The four-tenet structure (Communication, Partners not vendors, Complement expertise, Support narrative) is a recurring spine."
+    }
+  ],
+
+  "personas": [],
+
+  "spacing": {
+    "scale": [
+      { "name": "XS", "value": "8px" },
+      { "name": "S", "value": "16px" },
+      { "name": "M", "value": "24px" },
+      { "name": "L", "value": "48px" },
+      { "name": "XL", "value": "96px" },
+      { "name": "Section", "value": "144px" }
+    ],
+    "borderRadius": [
+      { "name": "Sharp", "value": "0px" }
+    ]
+  }
+}

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- stardust:provenance
+  generated_by: prototype
+  date: 2026-04-26
+  source_briefing: stardust/briefings/case-study-template.md
+  source_brand: stardust/brand-profile.json
+  variant: home-b-v1 design language
+  page_instance: CNP
+  copy_provenance:
+    - section eyebrows + module structure: from briefings/case-study-template.md
+    - body copy per module: synthesized to demonstrate the template tone (real authoring done per project)
+-->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CNP — Case Study — Modelic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&family=JetBrains+Mono:wght@400&family=Fraunces:ital,opsz,wght@1,9..144,400&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --color-canvas: #FFFFFF; --color-ink: #1A1A1A; --color-ink-rich: #242424;
+    --color-ink-soft: rgba(36,36,36,0.66); --color-ink-quiet: rgba(36,36,36,0.42);
+    --color-rule: rgba(36,36,36,0.08); --color-wavelength: #68D0D0;
+    --color-wavelength-deep: #2FAEAE; --color-foam: #CCE4E4; --color-drafting: #F4F4F2;
+    --font-body: 'Inter', sans-serif; --font-display: 'Inter', sans-serif;
+    --font-italic: 'Fraunces', serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+    --heading-mega: clamp(48px, 6.5vw, 96px);
+    --heading-xl: clamp(32px, 3.6vw, 56px);
+    --section-padding-y: clamp(80px, 10vw, 144px);
+    --section-padding-x: clamp(24px, 4vw, 56px);
+    --max-text: 720px;
+    --max-width: 1440px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--color-canvas); color: var(--color-ink); font-family: var(--font-body); font-size: 18px; line-height: 1.66; -webkit-font-smoothing: antialiased; padding-top: 56px; }
+  a { color: inherit; text-decoration: none; }
+  ::selection { background: var(--color-wavelength); color: var(--color-ink-rich); }
+
+  nav.top { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.85); backdrop-filter: blur(20px) saturate(1.4); border-bottom: 1px solid var(--color-rule); padding: 14px 0; }
+  nav.top .inner { max-width: 1440px; margin: 0 auto; padding: 0 var(--section-padding-x); display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  nav.top .lockup { display: flex; align-items: center; gap: 14px; }
+  nav.top .lockup img { height: 22px; }
+  nav.top ul.links { list-style: none; margin: 0; padding: 0; display: flex; gap: 28px; }
+  nav.top ul.links a { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; }
+  nav.top ul.links a.current { color: var(--color-wavelength-deep); }
+  nav.top .cta-btn { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 11px 18px; background: var(--color-ink-rich); color: var(--color-canvas); display: inline-flex; align-items: center; gap: 8px; }
+
+  .module-tag { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-ink-soft); display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+  .module-tag .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--color-wavelength-deep); }
+
+  /* M1 Hero */
+  section.hero { position: relative; min-height: 92vh; overflow: hidden; background: var(--color-ink-rich); }
+  section.hero .bg { position: absolute; inset: 0; z-index: 1; }
+  section.hero .bg img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.62); }
+  section.hero .bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(26,26,26,0.4) 0%, rgba(26,26,26,0.1) 40%, rgba(26,26,26,0.85) 100%); }
+  section.hero .content { position: relative; z-index: 2; max-width: var(--max-width); margin: 0 auto; padding: clamp(120px, 14vw, 200px) var(--section-padding-x) 64px; color: var(--color-canvas); min-height: 92vh; display: flex; flex-direction: column; justify-content: flex-end; }
+  section.hero .meta { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-wavelength); display: flex; align-items: center; gap: 14px; margin-bottom: 28px; }
+  section.hero .meta::before { content: ""; width: 28px; height: 1px; background: var(--color-wavelength); }
+  section.hero h1 { font-family: var(--font-display); font-weight: 100; font-size: var(--heading-mega); line-height: 0.94; letter-spacing: -0.04em; margin: 0 0 24px; max-width: 16ch; color: var(--color-canvas); }
+  section.hero h1 strong { font-weight: 700; }
+  section.hero .outcome { font-size: 19px; color: rgba(255,255,255,0.85); line-height: 1.5; max-width: 56ch; margin: 0; }
+
+  /* M2 At-a-Glance */
+  section.glance { background: var(--color-ink-rich); color: var(--color-canvas); padding: 64px var(--section-padding-x); border-top: 1px solid rgba(255,255,255,0.08); }
+  section.glance .inner { max-width: var(--max-width); margin: 0 auto; display: grid; grid-template-columns: repeat(5, 1fr); gap: 32px; }
+  .glance-item .label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-wavelength); margin-bottom: 8px; }
+  .glance-item .value { font-family: var(--font-display); font-weight: 300; font-size: 17px; color: var(--color-canvas); line-height: 1.4; }
+  .glance-item.metric .value { font-family: var(--font-display); font-weight: 100; font-size: 48px; line-height: 1; letter-spacing: -0.025em; color: var(--color-wavelength); }
+
+  /* Modules — page sections */
+  section.module { padding: var(--section-padding-y) var(--section-padding-x); }
+  section.module .inner { max-width: var(--max-width); margin: 0 auto; }
+  section.module.text-led .inner { max-width: var(--max-text); }
+  section.module h2 { font-family: var(--font-display); font-weight: 100; font-size: var(--heading-xl); line-height: 0.98; letter-spacing: -0.03em; margin: 0 0 32px; max-width: 20ch; }
+  section.module h2 strong { font-weight: 700; }
+  section.module p { font-size: 19px; line-height: 1.66; margin: 0 0 24px; color: var(--color-ink-rich); }
+  section.module p:last-child { margin-bottom: 0; }
+  section.module.tinted { background: var(--color-drafting); border-top: 1px solid var(--color-rule); border-bottom: 1px solid var(--color-rule); }
+
+  /* M3 Brief — quoted client voice */
+  .brief-block { border-left: 3px solid var(--color-wavelength); padding-left: 32px; }
+  .brief-block p { font-family: var(--font-italic); font-style: italic; font-size: 22px; line-height: 1.55; color: var(--color-ink-rich); }
+
+  /* Image module — full bleed gallery */
+  section.gallery { padding: 0; max-width: 100%; margin: 0; }
+  section.gallery img { width: 100%; display: block; }
+  section.gallery .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  section.gallery figcaption { padding: 20px var(--section-padding-x) 32px; max-width: var(--max-width); margin: 0 auto; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-ink-soft); }
+
+  /* M11 Outcomes */
+  section.outcomes { background: var(--color-ink-rich); color: var(--color-canvas); padding: var(--section-padding-y) var(--section-padding-x); position: relative; overflow: hidden; }
+  section.outcomes::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 800px 400px at 80% 30%, rgba(104,208,208,0.08), transparent 65%); pointer-events: none; }
+  section.outcomes .inner { max-width: var(--max-width); margin: 0 auto; position: relative; z-index: 2; }
+  .module-tag.on-dark { color: rgba(255,255,255,0.55); }
+  .module-tag.on-dark .dot { background: var(--color-wavelength); }
+  section.outcomes h2 { color: var(--color-canvas); }
+  section.outcomes h2 strong { color: var(--color-wavelength); }
+  .outcome-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid rgba(255,255,255,0.12); margin-top: 56px; }
+  .outcome-card { padding: 48px 32px 48px 0; border-bottom: 1px solid rgba(255,255,255,0.06); border-right: 1px solid rgba(255,255,255,0.06); }
+  .outcome-card:last-child { border-right: 0; padding-right: 0; }
+  .outcome-card:nth-child(2), .outcome-card:nth-child(3) { padding-left: 32px; }
+  .outcome-card .num { font-family: var(--font-display); font-weight: 100; font-size: 88px; line-height: 1; letter-spacing: -0.04em; color: var(--color-wavelength); margin-bottom: 16px; }
+  .outcome-card h3 { font-family: var(--font-display); font-weight: 600; font-size: 18px; margin: 0 0 8px; color: var(--color-canvas); }
+  .outcome-card p { font-size: 14px; line-height: 1.55; color: rgba(255,255,255,0.7); margin: 0; }
+
+  /* M12 Quote */
+  section.quote { padding: var(--section-padding-y) var(--section-padding-x); }
+  section.quote .inner { max-width: 980px; margin: 0 auto; text-align: left; }
+  section.quote blockquote { font-family: var(--font-italic); font-style: italic; font-size: clamp(28px, 3.4vw, 48px); line-height: 1.25; color: var(--color-ink-rich); margin: 0 0 32px; max-width: 22ch; letter-spacing: -0.015em; }
+  section.quote blockquote::before { content: "“"; color: var(--color-wavelength); font-family: var(--font-italic); font-size: 1.6em; vertical-align: -0.1em; margin-right: 8px; }
+  section.quote .attr { display: flex; align-items: center; gap: 18px; }
+  section.quote .attr .name { font-family: var(--font-display); font-weight: 600; font-size: 16px; color: var(--color-ink-rich); }
+  section.quote .attr .role { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-ink-soft); }
+
+  /* M15 Related */
+  section.related { padding: var(--section-padding-y) var(--section-padding-x); border-top: 1px solid var(--color-rule); }
+  section.related .inner { max-width: var(--max-width); margin: 0 auto; }
+  section.related h2 { font-family: var(--font-display); font-weight: 100; font-size: var(--heading-xl); line-height: 0.96; margin: 0 0 56px; }
+  section.related h2 strong { font-weight: 700; }
+  .related-tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .rel-tile { position: relative; aspect-ratio: 16/9; overflow: hidden; cursor: pointer; transition: transform .4s; }
+  .rel-tile:hover { transform: translateY(-3px); }
+  .rel-tile img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.86); transition: transform .8s; }
+  .rel-tile:hover img { transform: scale(1.04); }
+  .rel-tile .overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(26,26,26,0) 40%, rgba(26,26,26,0.78) 100%); }
+  .rel-tile .label { position: absolute; inset: auto 24px 24px 24px; color: var(--color-canvas); }
+  .rel-tile .label .name { font-family: var(--font-display); font-weight: 600; font-size: 26px; letter-spacing: -0.015em; }
+  .rel-tile .label .disc { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-wavelength); display: block; margin-bottom: 4px; }
+
+  /* CLOSING */
+  section.closing { background: var(--color-ink-rich); color: var(--color-canvas); padding: clamp(120px, 14vw, 180px) var(--section-padding-x) 96px; position: relative; overflow: hidden; }
+  section.closing .bg-wave { position: absolute; inset: 0; z-index: 1; opacity: 0.16; overflow: hidden; }
+  section.closing .bg-wave svg { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 220%; height: 360px; }
+  section.closing .bg-wave path { fill: none; stroke-width: 2; stroke-linecap: round; }
+  section.closing .bg-wave .a { stroke: var(--color-wavelength); }
+  section.closing .bg-wave .b { stroke: rgba(255,255,255,0.3); }
+  section.closing .inner { position: relative; z-index: 5; max-width: var(--max-width); margin: 0 auto; }
+  section.closing h2 { font-family: var(--font-display); font-weight: 100; font-size: var(--heading-mega); line-height: 0.92; letter-spacing: -0.04em; margin: 0 0 36px; max-width: 16ch; color: var(--color-canvas); }
+  section.closing h2 strong { font-weight: 800; color: var(--color-wavelength); }
+  section.closing .body { font-size: 19px; color: rgba(255,255,255,0.78); line-height: 1.55; max-width: 50ch; margin: 0 0 36px; }
+  .btn-loud { display: inline-flex; align-items: center; gap: 12px; padding: 18px 28px; background: var(--color-wavelength); color: var(--color-ink-rich); border: 1px solid var(--color-wavelength); font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; transition: all .25s; }
+  .btn-loud svg { width: 14px; height: 14px; transition: transform .3s; }
+  .btn-loud:hover { background: var(--color-canvas); border-color: var(--color-canvas); }
+  .btn-loud:hover svg { transform: translateX(4px); }
+
+  /* FOOTER */
+  footer.bottom { background: var(--color-ink); color: rgba(255,255,255,0.62); padding: 64px var(--section-padding-x) 36px; }
+  footer.bottom .inner { max-width: 1440px; margin: 0 auto; display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 48px; }
+  footer.bottom h4 { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-wavelength); margin: 0 0 18px; }
+  footer.bottom ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+  footer.bottom a { color: rgba(255,255,255,0.7); font-size: 13px; }
+  footer.bottom .lockup img { height: 26px; filter: invert(1); margin-bottom: 16px; }
+  footer.bottom .lockup p { margin: 0; font-size: 13px; line-height: 1.55; max-width: 32ch; }
+  footer.bottom .colophon { grid-column: 1 / -1; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 24px; margin-top: 28px; display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.32); }
+
+  @media (max-width: 980px) {
+    section.glance .inner { grid-template-columns: 1fr 1fr; }
+    .outcome-grid { grid-template-columns: 1fr; }
+    .outcome-card:nth-child(2), .outcome-card:nth-child(3) { padding-left: 0; padding-right: 0; border-right: 0; }
+    .outcome-card { padding-right: 0; border-right: 0; }
+    .related-tiles { grid-template-columns: 1fr; }
+    section.gallery .grid { grid-template-columns: 1fr; }
+    footer.bottom .inner { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+<nav class="top">
+  <div class="inner">
+    <a class="lockup" href="/"><img src="images/modelic-logo.png" alt="Modelic" /></a>
+    <ul class="links">
+      <li><a href="/work" class="current">Work</a></li>
+      <li><a href="/services/commerce">Services</a></li>
+      <li><a href="/approach">Approach</a></li>
+      <li><a href="/team">Team</a></li>
+    </ul>
+    <a class="cta-btn" href="/contact">Start a project<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
+  </div>
+</nav>
+</header>
+
+<main>
+
+<!-- M1 Hero -->
+<section class="hero">
+  <div class="bg"><img src="images/case-studies/cnp-1.jpg" alt="A hand picking apples from a sunlit orchard, photographed for the CNP project." /></div>
+  <div class="content">
+    <div class="meta">// Case study / 05 / CNP</div>
+    <h1>Brand and digital work for a <strong>regional food enterprise.</strong></h1>
+    <p class="outcome">2020 / Brand · App. Identity refresh and digital product work for a regional food cooperative.</p>
+  </div>
+</section>
+
+<!-- M2 At-a-Glance -->
+<section class="glance">
+  <div class="inner">
+    <div class="glance-item"><div class="label">Year</div><div class="value">2020</div></div>
+    <div class="glance-item"><div class="label">Disciplines</div><div class="value">Brand · App</div></div>
+    <div class="glance-item"><div class="label">Stack</div><div class="value">Custom · React · Sanity</div></div>
+    <div class="glance-item"><div class="label">Team</div><div class="value">3 from Modelic + CNP team</div></div>
+    <div class="glance-item metric"><div class="label">Members</div><div class="value">12k+</div></div>
+  </div>
+</section>
+
+<!-- M3 The Brief — client voice -->
+<section class="module text-led">
+  <div class="inner">
+    <div class="module-tag"><span class="dot"></span><span>// 03 / The brief</span></div>
+    <h2>What the Utah Food Bank came to us with.</h2>
+    <div class="brief-block">
+      <p>"We're a cooperative. The brand had to feel like the people, not like a corporation. We needed a partner who would understand that distinction without us having to defend it every meeting."</p>
+    </div>
+  </div>
+</section>
+
+<!-- M4 Discovery (image-led) -->
+<section class="gallery">
+  <div class="grid">
+    <img src="images/case-studies/cnp-1.jpg" alt="A hand picking apples from a sunlit orchard, photographed for the CNP project." />
+    <img src="images/case-studies/cnp-2.jpg" alt="CNP project detail." />
+  </div>
+</section>
+
+<section class="module text-led">
+  <div class="inner">
+    <div class="module-tag"><span class="dot"></span><span>// 04 / Discovery</span></div>
+    <h2>What we learned.</h2>
+    <p>CNP's membership had grown faster than the brand could keep up with. The visual identity was inherited from a much smaller cooperative twenty years earlier — beautiful, but unrecognizable in the new context. The members loved it for the wrong reasons.</p>
+    <p>The digital product layer — member accounts, ordering, distribution scheduling — had been built piece by piece over a decade. Each piece was reasonable; the whole was a maze. New members took weeks to learn the system. Long-time members were patient about it. We didn't want to bet the next decade on patient long-time members.</p>
+  </div>
+</section>
+
+<!-- M8 Accessibility (primary discipline for this project) -->
+<section class="module tinted">
+  <div class="inner">
+    <div class="module-tag"><span class="dot"></span><span>// 05 / Brand</span></div>
+    <h2>A refresh, <strong>not a rebuild.</strong></h2>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; max-width: 1080px;">
+      <div>
+        <p>The bones of the original identity were the right bones — they just needed a contemporary treatment. We kept the wordmark, redrew its proportions, and built a type and color system around it that scales from member newsletter to delivery truck.</p>
+      </div>
+      <div>
+        <p>The digital product was a different conversation. We rebuilt the member experience as a single React app on top of the existing data — no migration risk, real reduction in friction. New-member onboarding now takes minutes, not weeks.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- M5 The Decisions -->
+<section class="module text-led">
+  <div class="inner">
+    <div class="module-tag"><span class="dot"></span><span>// 06 / What we decided</span></div>
+    <h2>Two load-bearing calls.</h2>
+    <p><strong>We didn't replace the wordmark.</strong> The temptation in a brand refresh is to redraw everything. We argued the wordmark was a heirloom and treated it that way. The cooperative agreed.</p>
+    <p><strong>We built the new app on top of the old data.</strong> Migration would have meant a six-month freeze on all new features. The cooperative couldn't afford that. We didn't need to.</p>
+  </div>
+</section>
+
+<!-- M11 Outcomes -->
+<section class="outcomes">
+  <div class="inner">
+    <div class="module-tag on-dark"><span class="dot"></span><span>// 07 / What changed</span></div>
+    <h2>What the work moved.</h2>
+    <div class="outcome-grid">
+      <div class="outcome-card">
+        <div class="num">12k</div>
+        <h3>Members served</h3>
+        <p>The new system scales to the cooperative's current membership without engineering intervention.</p>
+      </div>
+      <div class="outcome-card">
+        <div class="num">min</div>
+        <h3>New member onboarding</h3>
+        <p>Down from weeks. Real numbers reported by the membership team.</p>
+      </div>
+      <div class="outcome-card">
+        <div class="num">0</div>
+        <h3>Migration risk</h3>
+        <p>No data migration, no freeze, no historical loss. The cooperative kept operating during the build.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- M12 Quote -->
+<section class="quote">
+  <div class="inner">
+    <div class="module-tag"><span class="dot"></span><span>// 08 / In their words</span></div>
+    <blockquote>They listened. That sounds small. After three other agencies, it didn't feel small.</blockquote>
+    <div class="attr">
+      <span class="name">Director · CNP</span>
+      <span class="role">— On the engagement</span>
+    </div>
+  </div>
+</section>
+
+<!-- M15 Related -->
+<section class="related">
+  <div class="inner">
+    <div class="module-tag"><span class="dot"></span><span>// 09 / More work</span></div>
+    <h2>Adjacent <strong>case studies.</strong></h2>
+    <div class="related-tiles">
+      <a class="rel-tile" href="/case-studies/utah-food-bank">
+        <img src="images/case-studies/utah-food-bank-1.jpg" alt="Utah Food Bank." />
+        <div class="overlay"></div>
+        <div class="label"><span class="disc">Accessibility · Commerce</span><span class="name">Utah Food Bank</span></div>
+      </a>
+      <a class="rel-tile" href="/case-studies/schumacher-homes">
+        <img src="images/case-studies/schumacher-homes-1.jpg" alt="Schumacher Homes." />
+        <div class="overlay"></div>
+        <div class="label"><span class="disc">Brand · App</span><span class="name">Schumacher Homes</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- M16 Closing -->
+<section class="closing">
+  <div class="bg-wave" aria-hidden="true">
+    <svg viewBox="0 0 1200 360" preserveAspectRatio="none">
+      <path class="a" d="M0,180 Q100,40 200,180 T400,180 T600,180 T800,180 T1000,180 T1200,180" />
+      <path class="b" d="M0,180 Q100,320 200,180 T400,180 T600,180 T800,180 T1000,180 T1200,180" />
+    </svg>
+  </div>
+  <div class="inner">
+    <div class="module-tag on-dark"><span class="dot"></span><span>// 10 / Get in touch</span></div>
+    <h2>Have a brand refresh project <strong>in mind?</strong></h2>
+    <p class="body">Send us an email or call us at 801-363-0101. We're here weekdays, 8:30 am – 5:30 pm Mountain Time.</p>
+    <a href="/contact" class="btn-loud">Start a project conversation<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
+  </div>
+</section>
+</main>
+
+<footer class="bottom">
+  <div class="inner">
+    <div class="lockup"><img src="images/modelic-logo.png" alt="Modelic" /><p>A craft design and engineering shop. Salt Lake City, since 2014.</p></div>
+    <div><h4>// Services</h4><ul><li><a href="/services/development">Development</a></li><li><a href="/services/design">Design</a></li><li><a href="/services/commerce">Commerce</a></li><li><a href="/services/accessibility">Accessibility</a></li><li><a href="/services/app-development">App Development</a></li></ul></div>
+    <div><h4>// Studio</h4><ul><li><a href="/work">Work</a></li><li><a href="/team">Team</a></li><li><a href="/careers">Careers</a></li><li><a href="/blog">Blog</a></li></ul></div>
+    <div><h4>// Contact</h4><ul><li><a href="tel:+18013630101">801-363-0101</a></li><li><a href="mailto:hello@modelic.io">hello@modelic.io</a></li><li>Salt Lake City, UT</li><li>Weekdays · 8:30 – 5:30 MT</li></ul></div>
+    <div class="colophon"><span>© 2026 Modelic</span><span>Privacy · Cookies</span></div>
+  </div>
+</footer>
+
+</body>
+</html>

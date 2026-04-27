@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- stardust:provenance
+  generated_by: brand
+  date: 2026-04-26
+  source: https://www.modelic.io
+  extraction_method: Playwright (Chromium 1440x900 @2x DPR)
+  synthesized_inputs:
+    - color role names (Wavelength, Console, Foam, Drafting, Canvas) — invented, not labeled on source
+    - voice traits, antiTraits, examples.dont — composed from extracted patterns
+    - tone, writingGoals, cleverVsClear — inferred from copy
+    - photography rules — generalised from a single hero
+    - logo clearSpace, donts — suggested defaults
+  note: Captured for design refresh. Wave mark, soft teal, lowercase wordmark, Inter 300 + Inter 600 are the recognisable bones.
+-->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Modelic — Brand Board</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --wavelength: #68D0D0;
+    --console: #242424;
+    --canvas: #FFFFFF;
+    --foam: #CCE4E4;
+    --drafting: #F7F7F7;
+    --footer-whisper: #999999;
+    --rule: rgba(36,36,36,0.12);
+    --max: 1280px;
+    --pad: 32px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--canvas);
+    color: var(--console);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 1.55;
+  }
+  a { color: inherit; }
+
+  /* Sticky nav */
+  nav.sticky {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--drafting);
+    border-bottom: 1px solid var(--rule);
+    padding: 14px 0;
+  }
+  nav.sticky .inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 var(--pad);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  nav.sticky .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  nav.sticky img.mark {
+    height: 28px;
+    width: auto;
+  }
+  nav.sticky .links {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+  nav.sticky .links a {
+    text-decoration: none;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--console);
+    padding: 6px 0;
+  }
+  nav.sticky .links a:hover { color: #0a8a8a; }
+
+  section.block {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 96px var(--pad) 64px;
+  }
+  section.block + section.block { padding-top: 32px; }
+  section.full {
+    margin: 0;
+    padding: 0;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Inter';
+    font-weight: 300;
+    margin: 0 0 16px 0;
+    letter-spacing: 0.01em;
+  }
+  h1 { font-size: clamp(48px, 7vw, 96px); line-height: 1.05; letter-spacing: -0.02em; }
+  h2 { font-size: clamp(32px, 4vw, 47px); line-height: 1.24; }
+  h3 { font-size: clamp(22px, 2.4vw, 28px); line-height: 1.4; }
+  h4 { font-size: 18px; font-weight: 500; letter-spacing: 0; }
+
+  .eyebrow {
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--console);
+    opacity: 0.7;
+    margin-bottom: 12px;
+  }
+
+  /* Masthead */
+  .masthead {
+    background: var(--drafting);
+    border-bottom: 1px solid var(--rule);
+    padding: 96px var(--pad);
+  }
+  .masthead .inner { max-width: var(--max); margin: 0 auto; }
+  .masthead .lockup {
+    display: flex; align-items: center; gap: 20px;
+    margin-bottom: 56px;
+  }
+  .masthead .lockup img {
+    height: 80px;
+    width: auto;
+  }
+  .masthead .tagline {
+    font-size: 28px;
+    line-height: 1.4;
+    font-weight: 300;
+    max-width: 720px;
+    color: var(--console);
+  }
+  .masthead .meta {
+    margin-top: 40px;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    font-size: 13px;
+    opacity: 0.6;
+  }
+
+  /* Provenance banner */
+  .provenance {
+    background: var(--console);
+    color: rgba(255,255,255,0.85);
+    padding: 18px var(--pad);
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .provenance .inner {
+    max-width: var(--max); margin: 0 auto;
+    display: flex; gap: 24px; flex-wrap: wrap; align-items: baseline;
+  }
+  .provenance b { color: var(--wavelength); font-weight: 600; letter-spacing: 0.04em; }
+  .provenance ul { margin: 6px 0 0; padding-left: 20px; color: rgba(255,255,255,0.65); }
+
+  /* Color palette */
+  .palette-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+  }
+  .swatch {
+    border: 1px solid var(--rule);
+    overflow: hidden;
+  }
+  .swatch .chip {
+    height: 180px;
+    display: flex;
+    align-items: flex-end;
+    padding: 16px;
+  }
+  .swatch .meta {
+    padding: 16px;
+    background: var(--canvas);
+  }
+  .swatch .name {
+    font-weight: 500;
+    font-size: 16px;
+  }
+  .swatch .hex {
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+  .swatch .role {
+    font-size: 13px;
+    opacity: 0.7;
+    margin-top: 8px;
+  }
+  .swatch .use {
+    font-size: 12px;
+    opacity: 0.55;
+    margin-top: 4px;
+    line-height: 1.5;
+  }
+
+  /* Typography specimens */
+  .type-specimen {
+    border-top: 1px solid var(--rule);
+    padding: 32px 0;
+  }
+  .type-specimen:first-child { border-top: 0; padding-top: 0; }
+  .type-specimen .label {
+    display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 16px;
+    font-size: 12px;
+    font-family: 'Inter';
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.6;
+  }
+  .specimen-h1 {
+    font-family: 'Inter';
+    font-weight: 300;
+    font-size: clamp(48px, 7vw, 96px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+  .specimen-h2 {
+    font-family: 'Inter';
+    font-weight: 300;
+    font-size: 47px;
+    line-height: 1.24;
+  }
+  .specimen-h3 {
+    font-family: 'Inter';
+    font-weight: 300;
+    font-size: 28px;
+    line-height: 1.43;
+  }
+  .specimen-body {
+    font-family: 'Inter';
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.55;
+    max-width: 640px;
+  }
+  .specimen-eyebrow {
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 12.48px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Voice */
+  .voice-traits {
+    display: flex; gap: 8px; flex-wrap: wrap;
+  }
+  .tag {
+    border: 1px solid var(--console);
+    padding: 6px 12px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .tag.anti {
+    border-color: var(--rule);
+    color: var(--console);
+    opacity: 0.5;
+    text-decoration: line-through;
+  }
+  .voice-pairs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+  }
+  .voice-card {
+    border-left: 3px solid var(--rule);
+    padding: 20px 24px;
+    background: var(--drafting);
+  }
+  .voice-card.do { border-left-color: var(--wavelength); }
+  .voice-card.dont { border-left-color: var(--console); }
+  .voice-card .label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .voice-card.do .label { color: #0a8a8a; }
+  .voice-card.dont .label { color: var(--console); opacity: 0.7; }
+  .voice-card .text {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    font-style: italic;
+    font-weight: 300;
+  }
+  .voice-card.dont .text { text-decoration: line-through; opacity: 0.65; }
+  .voice-card .ctx {
+    font-size: 13px;
+    opacity: 0.7;
+    line-height: 1.5;
+  }
+  .rules-list {
+    list-style: none;
+    padding: 0;
+    margin: 32px 0 0 0;
+    display: grid;
+    gap: 12px;
+  }
+  .rules-list li {
+    padding: 14px 18px;
+    border: 1px solid var(--rule);
+    font-size: 15px;
+  }
+  .rules-list li::before {
+    content: "—  ";
+    color: var(--wavelength);
+    font-weight: 600;
+  }
+
+  /* Tone */
+  .goals-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+  }
+  .goal-card {
+    border: 1px solid var(--rule);
+    padding: 24px;
+  }
+  .goal-card .num {
+    font-family: 'Inter';
+    font-weight: 300;
+    font-size: 64px;
+    line-height: 1;
+    color: var(--wavelength);
+    margin-bottom: 12px;
+  }
+  .clever-clear {
+    margin-top: 32px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+  .cc-card {
+    padding: 24px;
+    background: var(--drafting);
+  }
+  .cc-card.clever { background: var(--foam); }
+
+  /* Motifs */
+  .motif-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+  .motif {
+    border: 1px solid var(--rule);
+    overflow: hidden;
+    display: flex; flex-direction: column;
+  }
+  .motif .visual {
+    height: 220px;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--drafting);
+    position: relative;
+    overflow: hidden;
+  }
+  .motif .body {
+    padding: 20px;
+  }
+  .motif h4 { margin-bottom: 8px; }
+  .motif .desc { font-size: 14px; opacity: 0.8; margin-bottom: 10px; }
+  .motif .usage { font-size: 12px; opacity: 0.6; line-height: 1.5; border-top: 1px dashed var(--rule); padding-top: 10px; }
+
+  /* Wave SVG demo */
+  .wave-svg {
+    width: 80%;
+    max-width: 220px;
+  }
+  .wave-svg path { fill: none; stroke-width: 8; stroke-linecap: round; }
+  .wave-svg .ink { stroke: var(--console); }
+  .wave-svg .accent { stroke: var(--wavelength); opacity: 0.85; }
+
+  .photo-wash-demo {
+    width: 100%; height: 100%;
+    background:
+      linear-gradient(rgba(204,228,228,0.55), rgba(104,208,208,0.45)),
+      linear-gradient(135deg, #6b8b95 0%, #95b3b3 100%);
+    position: relative;
+  }
+  .photo-wash-demo::after {
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(ellipse 600px 100px at 30% 50%, transparent 49%, rgba(255,255,255,0.35) 50%, transparent 51%),
+      radial-gradient(ellipse 800px 120px at 70% 60%, transparent 49%, rgba(255,255,255,0.25) 50%, transparent 51%);
+  }
+
+  .numerals-demo {
+    display: flex; gap: 16px; align-items: center; justify-content: center;
+  }
+  .numerals-demo span {
+    background: var(--foam);
+    width: 80px; height: 80px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Inter';
+    font-weight: 300;
+    font-size: 56px;
+    color: var(--console);
+  }
+
+  .lowercase-demo {
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 56px;
+    letter-spacing: -0.02em;
+    color: var(--console);
+  }
+
+  /* Components — buttons */
+  .button-set {
+    display: flex; gap: 16px; flex-wrap: wrap; align-items: center;
+    padding: 32px;
+    background: var(--drafting);
+    border: 1px solid var(--rule);
+  }
+  .btn-primary {
+    background: var(--console);
+    color: var(--canvas);
+    padding: 14px 22px;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 12.48px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: 0;
+    border-radius: 0;
+    cursor: pointer;
+  }
+  .btn-eyebrow {
+    background: transparent;
+    color: var(--console);
+    padding: 9px 0;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 12.48px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: 0;
+    border-bottom: 2px solid var(--console);
+    cursor: pointer;
+  }
+  .btn-nav {
+    background: transparent;
+    color: var(--console);
+    padding: 9px 12px;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 12.48px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: 0;
+    cursor: pointer;
+  }
+  .btn-explainer { font-size: 12px; opacity: 0.6; margin-top: 12px; }
+
+  /* Photography */
+  .photo-rules {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+  }
+  .photo-rules .col h4 { margin-bottom: 12px; }
+  .photo-rules ul { margin: 0; padding-left: 20px; line-height: 1.7; }
+  .photo-rules .col.do h4 { color: #0a8a8a; }
+  .photo-rules .col.dont h4 { color: var(--console); opacity: 0.7; }
+
+  /* Pillars */
+  .pillars {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+  }
+  .pillar {
+    background: var(--drafting);
+    padding: 24px;
+    border-top: 3px solid var(--wavelength);
+  }
+  .pillar h4 { margin-bottom: 8px; font-weight: 500; }
+  .pillar p { font-size: 14px; opacity: 0.78; line-height: 1.55; margin: 0; }
+
+  /* Logo */
+  .logo-card {
+    background: var(--drafting);
+    padding: 64px;
+    text-align: center;
+    border: 1px solid var(--rule);
+  }
+  .logo-card img { max-width: 460px; width: 80%; height: auto; }
+  .logo-rules {
+    margin-top: 32px;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+  }
+  .logo-rules .item h4 {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 10px;
+  }
+  .logo-rules .item ul { padding-left: 20px; margin: 0; line-height: 1.6; font-size: 14px; }
+
+  /* Spacing */
+  .spacing-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 12px;
+    align-items: end;
+  }
+  .space-cell {
+    text-align: left;
+  }
+  .space-cell .bar {
+    background: var(--wavelength);
+    height: 8px;
+  }
+  .space-cell .label {
+    margin-top: 8px;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .space-cell .val { font-size: 12px; opacity: 0.6; margin-top: 2px; }
+
+  /* Footer */
+  footer.board-footer {
+    margin-top: 96px;
+    background: var(--console);
+    color: rgba(255,255,255,0.4);
+    padding: 64px var(--pad);
+  }
+  footer.board-footer .inner {
+    max-width: var(--max); margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 24px; flex-wrap: wrap;
+  }
+  footer.board-footer .mark { color: var(--wavelength); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; font-size: 12px; }
+  footer.board-footer p { margin: 0; font-size: 13px; }
+
+  @media (max-width: 720px) {
+    .photo-rules { grid-template-columns: 1fr; }
+    .masthead { padding: 64px var(--pad); }
+    .masthead .lockup img { height: 56px; }
+    .masthead .tagline { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="sticky">
+  <div class="inner">
+    <div class="brand">
+      <img class="mark" src="assets/logo.png" alt="Modelic" />
+      <span class="eyebrow" style="margin:0;">Brand Board</span>
+    </div>
+    <div class="links">
+      <a href="#palette">Palette</a>
+      <a href="#typography">Typography</a>
+      <a href="#voice">Voice</a>
+      <a href="#tone">Tone</a>
+      <a href="#motifs">Motifs</a>
+      <a href="#components">Components</a>
+      <a href="#photography">Photography</a>
+      <a href="#pillars">Pillars</a>
+      <a href="#logo">Logo</a>
+      <a href="#spacing">Spacing</a>
+    </div>
+  </div>
+</nav>
+
+<header class="masthead">
+  <div class="inner">
+    <div class="lockup">
+      <img src="assets/logo.png" alt="Modelic logo" />
+    </div>
+    <h1 style="font-weight:300; font-size: clamp(40px, 5.5vw, 76px);">A full-spectrum design and development agency.</h1>
+    <p class="tagline">Modelic cultivates smart strategies for branding, UX, e-commerce, and web accessibility — partners in sustainable growth, not a vending machine.</p>
+    <div class="meta">
+      <span><strong style="font-weight:600;">Source</strong> · modelic.io</span>
+      <span><strong style="font-weight:600;">Captured</strong> · 2026-04-26</span>
+      <span><strong style="font-weight:600;">Stage</strong> · refresh baseline</span>
+    </div>
+  </div>
+</header>
+
+<aside class="provenance">
+  <div class="inner">
+    <span><b>Provenance.</b> Extracted from modelic.io with Playwright. Color role names (Wavelength, Console, Foam, Drafting, Canvas), voice antiTraits + don't-examples, tone framing, photography rules, and logo do/don't are <em>composed from extracted patterns</em>, not labelled on the source. Inter 300 in display sizes and 0px corner radii are recorded as observed — both are dated and likely candidates to evolve in the refresh.</span>
+  </div>
+</aside>
+
+<!-- ════ PALETTE ════ -->
+<section class="block" id="palette">
+  <div class="eyebrow">02 · Palette</div>
+  <h2>Wavelength, Console, and the soft Foam wash.</h2>
+  <p style="max-width:640px; opacity:0.78;">Three core colors, two surface tones, one accent for the kinetic wave. The current site leans heavily on Foam over photography — the refresh will use it more sparingly.</p>
+
+  <h3 style="margin-top:48px; font-size:18px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; opacity:0.65;">Primary</h3>
+  <div class="palette-grid">
+    <div class="swatch">
+      <div class="chip" style="background: #68D0D0;"></div>
+      <div class="meta">
+        <div class="name">Wavelength Teal</div>
+        <div class="hex">#68D0D0</div>
+        <div class="role">Wavelength</div>
+        <div class="use">Logo accent wave, hero overlay base, illustrative tint, soft panels behind numerals</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="chip" style="background: #242424;"></div>
+      <div class="meta">
+        <div class="name">Console</div>
+        <div class="hex">#242424</div>
+        <div class="role">Console</div>
+        <div class="use">Wordmark + wave silhouette, headlines, body ink, CTA fill, footer ground</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="chip" style="background: #FFFFFF; border-bottom: 1px solid var(--rule);"></div>
+      <div class="meta">
+        <div class="name">Canvas</div>
+        <div class="hex">#FFFFFF</div>
+        <div class="role">Canvas</div>
+        <div class="use">Page ground, copy on Console, content cards</div>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:48px; font-size:18px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; opacity:0.65;">Secondary</h3>
+  <div class="palette-grid">
+    <div class="swatch">
+      <div class="chip" style="background: #CCE4E4;"></div>
+      <div class="meta">
+        <div class="name">Foam</div>
+        <div class="hex">#CCE4E4</div>
+        <div class="role">Foam</div>
+        <div class="use">Hero photo wash, soft tenet panel grounds</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="chip" style="background: #F7F7F7; border-bottom: 1px solid var(--rule);"></div>
+      <div class="meta">
+        <div class="name">Drafting</div>
+        <div class="hex">#F7F7F7</div>
+        <div class="role">Drafting</div>
+        <div class="use">Header on scroll, neutral panel ground separating sections</div>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:48px; font-size:18px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; opacity:0.65;">Web</h3>
+  <div class="palette-grid">
+    <div class="swatch">
+      <div class="chip" style="background: #999999;"></div>
+      <div class="meta">
+        <div class="name">Footer Whisper</div>
+        <div class="hex">#999999</div>
+        <div class="role">Footer Whisper</div>
+        <div class="use">Footer body copy on Console (rendered as rgba(255,255,255,0.4))</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ TYPOGRAPHY ════ -->
+<section class="block" id="typography">
+  <div class="eyebrow">03 · Typography</div>
+  <h2>Inter 300 carries the page. Inter 600 marks the scaffolding.</h2>
+  <p style="max-width:640px; opacity:0.78;">A single typeface in two weights — light for the human voice, semibold uppercase for nav and action. The wordmark itself reads heavier than anything on the page; treat it as a discrete asset.</p>
+
+  <div class="type-specimen">
+    <div class="label">
+      <span>Display H1</span><span>Inter 300</span><span>Tracking −0.02em</span>
+    </div>
+    <div class="specimen-h1">A full-spectrum design and development agency.</div>
+  </div>
+
+  <div class="type-specimen">
+    <div class="label">
+      <span>Section H2</span><span>Inter 300</span><span>~47px / 1.24</span>
+    </div>
+    <div class="specimen-h2">Our Tenets for Partnerships</div>
+  </div>
+
+  <div class="type-specimen">
+    <div class="label">
+      <span>Subhead H3</span><span>Inter 300</span><span>~28px / 1.43</span>
+    </div>
+    <div class="specimen-h3">We design and build beautiful, intuitive solutions that help brands grow faster.</div>
+  </div>
+
+  <div class="type-specimen">
+    <div class="label">
+      <span>Body</span><span>Inter 300</span><span>18–23px / 1.55</span>
+    </div>
+    <div class="specimen-body">Modelic is a full-spectrum design and development agency that cultivates smart strategies for branding, UX, e-commerce, and web accessibility. We are not a vending machine — we want to be your partners in sustainable growth.</div>
+  </div>
+
+  <div class="type-specimen">
+    <div class="label">
+      <span>Eyebrow / Button / Nav</span><span>Inter 600</span><span>12.48px · uppercase · 0.08em</span>
+    </div>
+    <div class="specimen-eyebrow">SEE HOW WE DO IT &nbsp;·&nbsp; DEVELOPMENT &nbsp;·&nbsp; DESIGN &nbsp;·&nbsp; BIGCOMMERCE & SHOPIFY</div>
+  </div>
+
+  <ul class="rules-list">
+    <li>All CTAs and nav items are uppercase Inter 600 at ~12.48px with letter-spacing ≈ 0.08em.</li>
+    <li>Headlines and body share Inter 300 — structural emphasis comes from size, not weight.</li>
+    <li>The wordmark is heavier than any set type on the page. Treat it as a discrete asset, never as set Inter.</li>
+    <li>Body copy runs at full ink (no opacity reduction).</li>
+  </ul>
+</section>
+
+<!-- ════ VOICE ════ -->
+<section class="block" id="voice">
+  <div class="eyebrow">04 · Voice</div>
+  <h2>Plain-spoken, partner-minded, slightly self-effacing.</h2>
+  <p style="max-width:640px; opacity:0.78;">A craft agency that talks like a human collaborator, not a sales deck. Self-effacement ("we are not a vending machine") is a feature, not a bug.</p>
+
+  <h3 style="margin-top:32px; font-size:13px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; opacity:0.6;">Voice is</h3>
+  <div class="voice-traits">
+    <span class="tag">Plain-spoken</span>
+    <span class="tag">Earnest</span>
+    <span class="tag">Partner-minded</span>
+    <span class="tag">Craft-respecting</span>
+    <span class="tag">Slightly self-effacing</span>
+  </div>
+
+  <h3 style="margin-top:32px; font-size:13px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; opacity:0.6;">Voice is not</h3>
+  <div class="voice-traits">
+    <span class="tag anti">Salesy</span>
+    <span class="tag anti">Hype-y</span>
+    <span class="tag anti">Agency-jargon-laden</span>
+    <span class="tag anti">Boastful</span>
+    <span class="tag anti">Disposable / vending-machine</span>
+  </div>
+
+  <div class="voice-pairs">
+    <div class="voice-card do">
+      <div class="label">✓ Do</div>
+      <div class="text">"Modelic is a full-spectrum design and development agency that cultivates smart strategies for branding, UX, e-commerce, and web accessibility."</div>
+      <div class="ctx">Names what we do without superlatives. "Cultivates" lands warmer than "delivers" or "drives."</div>
+    </div>
+    <div class="voice-card dont">
+      <div class="label">✗ Don't</div>
+      <div class="text">"We're a world-class digital agency delivering best-in-class solutions."</div>
+      <div class="ctx">Generic superlatives — exactly the agency-speak the brand defines itself against.</div>
+    </div>
+    <div class="voice-card do">
+      <div class="label">✓ Do</div>
+      <div class="text">"We are not a vending machine. We want to be your partners in sustainable growth."</div>
+      <div class="ctx">Self-effacing line that defines the relationship by naming what we won't be.</div>
+    </div>
+    <div class="voice-card dont">
+      <div class="label">✗ Don't</div>
+      <div class="text">"Unlock explosive growth with our proprietary methodology."</div>
+      <div class="ctx">Hype + jargon. The brand's self-effacing register makes "unlock" and "explosive" feel like another voice entirely.</div>
+    </div>
+    <div class="voice-card do">
+      <div class="label">✓ Do</div>
+      <div class="text">"Hire us because we excel in something you cannot do. We'll utilize our skills to complement your areas of expertise."</div>
+      <div class="ctx">Acknowledges client's strengths first, ours second.</div>
+    </div>
+    <div class="voice-card dont">
+      <div class="label">✗ Don't</div>
+      <div class="text">"Submit your project request and our team will respond within 24 hours."</div>
+      <div class="ctx">Vending-machine framing — exactly the relationship the brand says it isn't.</div>
+    </div>
+  </div>
+
+  <ul class="rules-list">
+    <li>Lead with the partnership, not the deliverable.</li>
+    <li>Plain verbs over agency verbs: "help", "build", "design" beats "leverage", "deliver", "drive".</li>
+    <li>If a sentence could appear on a competitor agency's site verbatim, rewrite it.</li>
+    <li>Self-effacing lines are part of the voice — keep them.</li>
+    <li>Title-case headlines; sentence-case body. The wordmark stays lowercase.</li>
+  </ul>
+</section>
+
+<!-- ════ TONE ════ -->
+<section class="block" id="tone">
+  <div class="eyebrow">05 · Tone</div>
+  <h2>Calm and partner-minded across contexts.</h2>
+  <p style="max-width:640px; opacity:0.78;">Process pages are declarative. Case studies are story-led. Contact copy is warm and specific (real phone number, real hours).</p>
+
+  <div class="goals-grid">
+    <div class="goal-card">
+      <div class="num">01</div>
+      <h4>To partner</h4>
+      <p>Position Modelic as a collaborator inside the client's team, not a supplier across the table.</p>
+    </div>
+    <div class="goal-card">
+      <div class="num">02</div>
+      <h4>To respect craft</h4>
+      <p>Honor the client's expertise; bring our craft to complement, not replace.</p>
+    </div>
+    <div class="goal-card">
+      <div class="num">03</div>
+      <h4>To be findable in plain language</h4>
+      <p>Real phone number, real hours, real services. No cute placeholders.</p>
+    </div>
+  </div>
+
+  <div class="clever-clear">
+    <div class="cc-card clever">
+      <h4>Clever — sparingly</h4>
+      <p>The "we are not a vending machine" line is the brand's allowance for a touch of wit. One per page, max.</p>
+    </div>
+    <div class="cc-card">
+      <h4>Clear — default</h4>
+      <p>Service nav, process tenets, contact lines, and CTAs are all plainly labelled.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════ MOTIFS ════ -->
+<section class="block" id="motifs">
+  <div class="eyebrow">06 · Motifs</div>
+  <h2>The wave is the brand. Everything else supports it.</h2>
+
+  <div class="motif-grid">
+    <div class="motif">
+      <div class="visual">
+        <svg class="wave-svg" viewBox="0 0 220 80">
+          <path class="accent" d="M5,40 Q35,5 65,40 T125,40 T185,40 T215,40" />
+          <path class="ink" d="M5,40 Q35,75 65,40 T125,40 T185,40 T215,40" />
+        </svg>
+      </div>
+      <div class="body">
+        <h4>Modelic wave</h4>
+        <p class="desc">Two interleaved sine curves — Console silhouette with a Wavelength accent riding behind it. Reads as oscillation, signal, model + logic.</p>
+        <p class="usage"><strong>Usage:</strong> Always paired with the wordmark in the primary lockup. May stand alone at small sizes (favicon, app icon) and may animate on first load. The refresh treats this mark as kinetic by default — see .impeccable.md.</p>
+      </div>
+    </div>
+
+    <div class="motif">
+      <div class="visual" style="padding:0;">
+        <div class="photo-wash-demo"></div>
+      </div>
+      <div class="body">
+        <h4>Pale teal photo wash</h4>
+        <p class="desc">Hero and case-study photography sits beneath a translucent Foam (#CCE4E4) overlay with a faint waveform line pattern on top. Effect is dreamy, considered, agency-calm.</p>
+        <p class="usage"><strong>Usage:</strong> Hero sections and case-study openers. Avoid on portrait close-ups where skin tones should read true. The refresh will reduce density of this wash — selected hero moments only.</p>
+      </div>
+    </div>
+
+    <div class="motif">
+      <div class="visual">
+        <div class="numerals-demo">
+          <span>1</span><span>2</span><span>3</span>
+        </div>
+      </div>
+      <div class="body">
+        <h4>Display numerals</h4>
+        <p class="desc">Tenets and process steps marked with very large Inter 300 numerals set inside Foam panels and offset against Console copy.</p>
+        <p class="usage"><strong>Usage:</strong> Any list-of-N section: principles, process steps, services. One numeral per panel, set generously.</p>
+      </div>
+    </div>
+
+    <div class="motif">
+      <div class="visual">
+        <div class="lowercase-demo">modelic</div>
+      </div>
+      <div class="body">
+        <h4>Lowercase wordmark</h4>
+        <p class="desc">The wordmark is always set lowercase, no exceptions. Sentence-case "Modelic" is correct in body copy; the wordmark itself is fixed lowercase.</p>
+        <p class="usage"><strong>Usage:</strong> Logo lockups only. Never replace the wordmark with a typed "modelic" inside running copy — use the asset.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ COMPONENTS ════ -->
+<section class="block" id="components">
+  <div class="eyebrow">07 · Components</div>
+  <h2>Sharp corners, uppercase action.</h2>
+  <p style="max-width:640px; opacity:0.78;">Three button patterns, all set in Inter 600 / 12.48px / uppercase. Border-radius is <code>0px</code> across the system — a deliberate counterpoint to the curved wave mark.</p>
+
+  <div class="button-set">
+    <button class="btn-primary">SEE HOW WE DO IT</button>
+    <button class="btn-eyebrow">VIEW ALL WORK</button>
+    <button class="btn-nav">DEVELOPMENT</button>
+  </div>
+  <p class="btn-explainer">Console-filled · Eyebrow-link · Nav. The refresh may revisit the 0px radius — it's a strong choice but reads as 2018-Squarespace today.</p>
+</section>
+
+<!-- ════ PHOTOGRAPHY ════ -->
+<section class="block" id="photography">
+  <div class="eyebrow">08 · Photography</div>
+  <h2>Workspace and team-in-context.</h2>
+  <p style="max-width:640px; opacity:0.78;">People mid-action — typing, sketching — shot from a slightly elevated angle in cool, neutral light. Editorial calm, not stock photography.</p>
+
+  <div class="photo-rules">
+    <div class="col do">
+      <h4>✓ Do</h4>
+      <ul>
+        <li>Always overlay hero imagery with the Foam wash and a subtle waveform graphic.</li>
+        <li>Subjects mid-action (typing, sketching) rather than posed.</li>
+        <li>Cool to neutral light. Avoid warm golden-hour tones — they fight the teal.</li>
+      </ul>
+    </div>
+    <div class="col dont">
+      <h4>✗ Don't</h4>
+      <ul>
+        <li>No isolated product shots on white.</li>
+        <li>No stock-feeling handshakes, conference rooms, or generic "team in a meeting" setups.</li>
+        <li>No saturated brand colors imported from clients into Modelic-owned imagery.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ════ PILLARS ════ -->
+<section class="block" id="pillars">
+  <div class="eyebrow">09 · Content Pillars</div>
+  <h2>What Modelic talks about.</h2>
+
+  <div class="pillars">
+    <div class="pillar">
+      <h4>Development</h4>
+      <p>Engineering for e-commerce platforms (Shopify, BigCommerce, WordPress) and accessibility-conformant builds.</p>
+    </div>
+    <div class="pillar">
+      <h4>Design</h4>
+      <p>Branding, UX, and visual design that complements the engineering work.</p>
+    </div>
+    <div class="pillar">
+      <h4>E-commerce</h4>
+      <p>Conversion-focused commerce work — case studies are framed as "Conversion Case Study".</p>
+    </div>
+    <div class="pillar">
+      <h4>The People</h4>
+      <p>Team-led stories. The agency is framed as a group of passionate, energetic, creative people.</p>
+    </div>
+    <div class="pillar">
+      <h4>Tenets / Process</h4>
+      <p>How we partner. Communication, partners-not-vendors, complement-expertise, support-narrative is the recurring spine.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════ LOGO ════ -->
+<section class="block" id="logo">
+  <div class="eyebrow">10 · Logo</div>
+  <h2>Wave + lowercase wordmark.</h2>
+
+  <div class="logo-card">
+    <img src="assets/logo.png" alt="Modelic logo lockup" />
+  </div>
+
+  <div class="logo-rules">
+    <div class="item">
+      <h4>Clear space</h4>
+      <ul>
+        <li>Maintain clear space equal to the cap height of the wordmark on all sides.</li>
+        <li>Minimum on-screen lockup width: 96px.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>Don't</h4>
+      <ul>
+        <li>Don't place the wordmark on backgrounds that obscure the wave's teal accent.</li>
+        <li>Don't stretch, recolor the wordmark to non-Console values, or separate the wave from the wordmark in horizontal lockup.</li>
+        <li>Don't set the lockup smaller than 96px wide — the inter-wave detail collapses.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ════ SPACING ════ -->
+<section class="block" id="spacing">
+  <div class="eyebrow">11 · Spacing & Shape</div>
+  <h2>Generous, geometric, sharp.</h2>
+
+  <div class="spacing-grid">
+    <div class="space-cell"><div class="bar" style="width: 8px;"></div><div class="label">XS</div><div class="val">8px</div></div>
+    <div class="space-cell"><div class="bar" style="width: 16px;"></div><div class="label">S</div><div class="val">16px</div></div>
+    <div class="space-cell"><div class="bar" style="width: 24px;"></div><div class="label">M</div><div class="val">24px</div></div>
+    <div class="space-cell"><div class="bar" style="width: 48px;"></div><div class="label">L</div><div class="val">48px</div></div>
+    <div class="space-cell"><div class="bar" style="width: 96px;"></div><div class="label">XL</div><div class="val">96px</div></div>
+    <div class="space-cell"><div class="bar" style="width: 144px;"></div><div class="label">Section</div><div class="val">144px</div></div>
+  </div>
+
+  <p style="margin-top:32px; opacity:0.7; max-width:640px;">Border radius across the system is <strong>0px</strong> — a sharp counterpoint to the curved wave mark. The current site uses this aggressively. The refresh may revisit.</p>
+</section>
+
+<footer class="board-footer">
+  <div class="inner">
+    <div>
+      <div class="mark">Modelic · Brand Board</div>
+      <p>Captured 2026-04-26 from modelic.io · Stardust pipeline, brand stage</p>
+    </div>
+    <p style="opacity:0.5;">Next: <code style="color: var(--wavelength);">/stardust:briefings</code> to plan page intent for the refresh.</p>
+  </div>
+</footer>
+
+</body>
+</html>

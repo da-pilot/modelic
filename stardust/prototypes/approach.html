@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- stardust:provenance
+  generated_by: prototype
+  date: 2026-04-26
+  source_briefing: synthesized from briefings/_site.md, home.md tenet content + brand-profile.json contentPillars
+  source_brand: stardust/brand-profile.json
+  variant: home-b-v1 design language
+  page_instance: Approach (full tenets page — referenced as "How we work" from home and service pages)
+  copy_provenance:
+    - tenet headlines (Partner, Measure, Modern toolkit): from home.md / brand-profile.json verbatim
+    - vending-machine line: from existing modelic.io copy (per brand-profile.json voice.examples.do)
+    - process cadence: synthesized to match the tone agreed in home.md and service-template.md
+-->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>How we work — Modelic</title>
+<meta name="description" content="We are not a vending machine. We're a tastemaker design and engineering shop — partners in sustainable growth, not perpetual retainers." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&family=JetBrains+Mono:wght@400&family=Fraunces:ital,opsz,wght@1,9..144,400&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --color-canvas: #FFFFFF; --color-ink: #1A1A1A; --color-ink-rich: #242424;
+    --color-ink-soft: rgba(36,36,36,0.66); --color-ink-quiet: rgba(36,36,36,0.42);
+    --color-rule: rgba(36,36,36,0.08); --color-wavelength: #68D0D0;
+    --color-wavelength-deep: #2FAEAE; --color-foam: #CCE4E4; --color-drafting: #F4F4F2;
+    --font-body: 'Inter', sans-serif; --font-display: 'Inter', sans-serif;
+    --font-italic: 'Fraunces', serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+    --heading-mega: clamp(48px, 6.5vw, 96px);
+    --heading-xl: clamp(36px, 4.6vw, 72px);
+    --section-padding-y: clamp(96px, 11vw, 160px);
+    --section-padding-x: clamp(24px, 4vw, 56px);
+    --max-width: 1280px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--color-canvas); color: var(--color-ink); font-family: var(--font-body); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; padding-top: 56px; }
+  a { color: inherit; text-decoration: none; }
+  ::selection { background: var(--color-wavelength); color: var(--color-ink-rich); }
+
+  nav.top { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.85); backdrop-filter: blur(20px) saturate(1.4); border-bottom: 1px solid var(--color-rule); padding: 14px 0; }
+  nav.top .inner { max-width: 1440px; margin: 0 auto; padding: 0 var(--section-padding-x); display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  nav.top .lockup { display: flex; align-items: center; gap: 14px; }
+  nav.top .lockup img { height: 22px; }
+  nav.top ul.links { list-style: none; margin: 0; padding: 0; display: flex; gap: 28px; }
+  nav.top ul.links a { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; }
+  nav.top ul.links a.current { color: var(--color-wavelength-deep); }
+  nav.top .cta-btn { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 11px 18px; background: var(--color-ink-rich); color: var(--color-canvas); display: inline-flex; align-items: center; gap: 8px; }
+
+  .sec-header { display: flex; align-items: flex-start; gap: 14px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-ink-soft); margin-bottom: 32px; }
+  .sec-header .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--color-wavelength-deep); margin-top: 4px; flex-shrink: 0; }
+  .sec-header.on-dark { color: rgba(255,255,255,0.55); }
+  .sec-header.on-dark .dot { background: var(--color-wavelength); }
+
+  /* HERO */
+  section.hero { background: var(--color-ink-rich); color: var(--color-canvas); padding: clamp(96px, 11vw, 144px) var(--section-padding-x) clamp(96px, 11vw, 144px); position: relative; overflow: hidden; }
+  section.hero::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(104,208,208,0.5), transparent); }
+  section.hero::after { content: ""; position: absolute; right: -10%; top: -10%; width: 60%; height: 80%; background: radial-gradient(circle, rgba(104,208,208,0.08), transparent 60%); pointer-events: none; }
+  section.hero .inner { max-width: var(--max-width); margin: 0 auto; position: relative; z-index: 2; }
+  .hero-meta { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-wavelength); display: flex; align-items: center; gap: 14px; margin-bottom: 36px; }
+  .hero-meta::before { content: ""; width: 28px; height: 1px; background: var(--color-wavelength); }
+  section.hero h1 { font-family: var(--font-display); font-weight: 100; font-size: var(--heading-mega); line-height: 0.94; letter-spacing: -0.04em; margin: 0 0 32px; max-width: 16ch; color: var(--color-canvas); }
+  section.hero h1 strong { font-weight: 700; color: var(--color-wavelength); font-style: normal; }
+  section.hero h1 strong em { font-family: var(--font-italic); font-style: italic; font-weight: 400; }
+  section.hero .subhead { font-weight: 300; font-size: clamp(20px, 1.6vw, 26px); line-height: 1.5; color: rgba(255,255,255,0.85); max-width: 50ch; margin: 0; }
+
+  /* MANIFESTO — the vending-machine moment */
+  section.manifesto { padding: var(--section-padding-y) var(--section-padding-x); max-width: var(--max-width); margin: 0 auto; }
+  .manifesto-quote { font-family: var(--font-italic); font-style: italic; font-size: clamp(36px, 4.5vw, 64px); line-height: 1.2; letter-spacing: -0.02em; color: var(--color-ink-rich); max-width: 26ch; margin: 0 0 48px; }
+  .manifesto-quote::before { content: "“"; color: var(--color-wavelength-deep); font-size: 1.6em; vertical-align: -0.1em; margin-right: 8px; }
+  .manifesto-body { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
+  .manifesto-body p { font-size: 18px; line-height: 1.65; color: var(--color-ink-soft); margin: 0 0 20px; }
+  .manifesto-body p:last-child { margin-bottom: 0; }
+
+  /* TENETS — full detail (DARK section) */
+  section.tenets { background: var(--color-ink-rich); color: var(--color-canvas); padding: var(--section-padding-y) var(--section-padding-x); position: relative; overflow: hidden; }
+  section.tenets::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 800px 400px at 80% 30%, rgba(104,208,208,0.06), transparent 65%); pointer-events: none; }
+  section.tenets .inner { max-width: var(--max-width); margin: 0 auto; position: relative; z-index: 2; }
+  section.tenets h2 { font-family: var(--font-display); font-weight: 100; font-size: var(--heading-xl); line-height: 0.96; letter-spacing: -0.035em; margin: 0 0 96px; max-width: 14ch; }
+  section.tenets h2 strong { font-weight: 700; color: var(--color-wavelength); }
+  .tenet { display: grid; grid-template-columns: 1fr 2fr; gap: 64px; padding: 56px 0; border-top: 1px solid rgba(255,255,255,0.1); align-items: start; }
+  .tenet:last-child { border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .tenet .left { position: sticky; top: 80px; }
+  .tenet .num { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; color: var(--color-wavelength); margin-bottom: 16px; }
+  .tenet h3 { font-family: var(--font-display); font-weight: 700; font-size: clamp(32px, 3.6vw, 48px); line-height: 1.05; letter-spacing: -0.025em; margin: 0; color: var(--color-canvas); }
+  .tenet h3 em { font-family: var(--font-italic); font-style: italic; font-weight: 400; color: var(--color-wavelength); }
+  .tenet .right p { font-size: 17px; line-height: 1.7; color: rgba(255,255,255,0.78); margin: 0 0 18px; }
+  .tenet .right p:last-child { margin-bottom: 0; }
+  .tenet .right strong { font-weight: 600; color: var(--color-canvas); }
+
+  /* PROCESS / CADENCE */
+  section.cadence { padding: var(--section-padding-y) var(--section-padding-x); max-width: var(--max-width); margin: 0 auto; }
+  section.cadence h2 { font-family: var(--font-display); font-weight: 100; font-size: var(--heading-xl); line-height: 0.96; letter-spacing: -0.035em; margin: 0 0 64px; max-width: 18ch; }
+  section.cadence h2 strong { font-weight: 700; }
+  .cadence-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 2px solid var(--color-ink-rich); }
+  .phase { padding: 36px 24px 36px 0; border-right: 1px solid var(--color-rule); }
+  .phase:last-child { border-right: 0; padding-right: 0; }
+  .phase:nth-child(2), .phase:nth-child(3), .phase:nth-child(4) { padding-left: 24px; }
+  .phase .num { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; color: var(--color-wavelength-deep); margin-bottom: 18px; }
+  .phase h3 { font-family: var(--font-display); font-weight: 600; font-size: 22px; letter-spacing: -0.015em; margin: 0 0 12px; }
+  .phase p { font-size: 14px; line-height: 1.6; color: var(--color-ink-soft); margin: 0; }
+  .phase .duration { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-ink-quiet); margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--color-rule); }
+
+  /* CLOSING */
+  section.closing { background: var(--color-ink-rich); color: var(--color-canvas); padding: clamp(120px, 14vw, 180px) var(--section-padding-x) 96px; position: relative; overflow: hidden; }
+  section.closing .bg-wave { position: absolute; inset: 0; z-index: 1; opacity: 0.16; overflow: hidden; }
+  section.closing .bg-wave svg { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 220%; height: 360px; }
+  section.closing .bg-wave path { fill: none; stroke-width: 2; stroke-linecap: round; }
+  section.closing .bg-wave .a { stroke: var(--color-wavelength); }
+  section.closing .bg-wave .b { stroke: rgba(255,255,255,0.3); }
+  section.closing .inner { position: relative; z-index: 5; max-width: var(--max-width); margin: 0 auto; }
+  section.closing h2 { font-family: var(--font-display); font-weight: 100; font-size: var(--heading-mega); line-height: 0.92; letter-spacing: -0.04em; margin: 0 0 36px; max-width: 16ch; color: var(--color-canvas); }
+  section.closing h2 strong { font-weight: 800; color: var(--color-wavelength); }
+  section.closing .body { font-size: 19px; color: rgba(255,255,255,0.78); line-height: 1.55; max-width: 50ch; margin: 0 0 36px; }
+  .btn-loud { display: inline-flex; align-items: center; gap: 12px; padding: 18px 28px; background: var(--color-wavelength); color: var(--color-ink-rich); border: 1px solid var(--color-wavelength); font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; transition: background .25s, color .25s; }
+  .btn-loud:hover { background: var(--color-canvas); border-color: var(--color-canvas); }
+  .btn-loud svg { width: 14px; height: 14px; transition: transform .3s; }
+  .btn-loud:hover svg { transform: translateX(4px); }
+
+  footer.bottom { background: var(--color-ink); color: rgba(255,255,255,0.62); padding: 64px var(--section-padding-x) 36px; }
+  footer.bottom .inner { max-width: 1440px; margin: 0 auto; display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 48px; }
+  footer.bottom h4 { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-wavelength); margin: 0 0 18px; }
+  footer.bottom ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+  footer.bottom a { color: rgba(255,255,255,0.7); font-size: 13px; }
+  footer.bottom .lockup img { height: 26px; filter: invert(1); margin-bottom: 16px; }
+  footer.bottom .lockup p { margin: 0; font-size: 13px; line-height: 1.55; max-width: 32ch; }
+  footer.bottom .colophon { grid-column: 1 / -1; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 24px; margin-top: 28px; display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.32); }
+
+  @media (max-width: 980px) {
+    .manifesto-body { grid-template-columns: 1fr; gap: 24px; }
+    .tenet { grid-template-columns: 1fr; gap: 24px; }
+    .tenet .left { position: static; }
+    .cadence-grid { grid-template-columns: 1fr 1fr; }
+    .phase:nth-child(3), .phase:nth-child(4) { border-top: 1px solid var(--color-rule); margin-top: 12px; padding-top: 36px; }
+    footer.bottom .inner { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+<nav class="top">
+  <div class="inner">
+    <a class="lockup" href="/"><img src="images/modelic-logo.png" alt="Modelic" /></a>
+    <ul class="links">
+      <li><a href="/work">Work</a></li>
+      <li><a href="/services/commerce">Services</a></li>
+      <li><a href="/approach" class="current">Approach</a></li>
+      <li><a href="/team">Team</a></li>
+    </ul>
+    <a class="cta-btn" href="/contact">Start a project<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
+  </div>
+</nav>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="inner">
+    <div class="hero-meta">// Modelic / How we work</div>
+    <h1>Not a <strong>vending <em>machine.</em></strong></h1>
+    <p class="subhead">A craft design and engineering shop. Partners in sustainable growth — not perpetual retainers, not handed-off proposals, not industry-leading anything.</p>
+  </div>
+</section>
+
+<section class="manifesto">
+  <div class="sec-header"><span class="dot"></span><span>// 02 / What this isn't</span></div>
+  <p class="manifesto-quote">We are not a vending machine. We want to be your partners in sustainable growth.</p>
+  <div class="manifesto-body">
+    <div>
+      <p>The agency model most clients have lived through is a transaction. You write a brief, you get a deck, you sign a contract, and a team you'll never see again ships some work. Then there's a retainer, and the retainer is the business model. We don't run that way — and we don't apologize for it.</p>
+      <p>Modelic is a small, senior team. Every project is led, designed, and engineered by the people you'd meet on the call. The contract has an end date. The relationship usually doesn't.</p>
+    </div>
+    <div>
+      <p>We grow by getting better at the work, not by getting bigger. We turn down projects that don't fit. We bring our craft to complement your team's expertise — and we say so out loud when there's something we're not the right shop for.</p>
+      <p>This page is the long version of that. The short version is: hire us because we excel at something you cannot do.</p>
+    </div>
+  </div>
+</section>
+
+<section class="tenets">
+  <div class="inner">
+    <div class="sec-header on-dark"><span class="dot"></span><span>// 03 / Three things we hold to</span></div>
+    <h2>The three <strong>tenets.</strong></h2>
+
+    <div class="tenet">
+      <div class="left">
+        <div class="num">/ 01</div>
+        <h3>We <em>partner.</em></h3>
+      </div>
+      <div class="right">
+        <p>We're inside your team, not across the table from you. The cadence we work in is yours — your tools, your standup time zone, your decision rituals. We bring our process only where there's a gap.</p>
+        <p><strong>Communication is the cornerstone.</strong> Projects live and die by it. If a project is going wrong, we say so on the next call — not in a status report two weeks later. If we're going to miss a date, we say it the moment we know.</p>
+        <p>We don't want to be your vendor. We want to be a small extension of your team. That changes how decisions get made, how scope evolves, how scope gets cut. The work that ships is better when there's no client/agency wall to perform across.</p>
+      </div>
+    </div>
+
+    <div class="tenet">
+      <div class="left">
+        <div class="num">/ 02</div>
+        <h3>We <em>measure.</em></h3>
+      </div>
+      <div class="right">
+        <p>We build for outcomes you can name. Conversion on a specific page. Performance on a specific budget. Cost on a specific team. The metric that anchored the kickoff is the metric that anchors every decision through ship — and the metric we report against past launch.</p>
+        <p><strong>If we can't measure it, we don't claim it.</strong> "Industry-leading" and "best-in-class" don't appear in our case studies for the same reason they shouldn't appear in yours.</p>
+        <p>This isn't optimization for its own sake. Real measurement keeps us honest about the work that didn't move the number we said we'd move. Sometimes we ship something that didn't pan out. We say so. The next thing works better because of it.</p>
+      </div>
+    </div>
+
+    <div class="tenet">
+      <div class="left">
+        <div class="num">/ 03</div>
+        <h3>We use <em>modern</em> tools.</h3>
+      </div>
+      <div class="right">
+        <p>Modern CMS, modern commerce, AI where it earns its place. The toolkit a small craft team should have in 2026 — not the one a 200-person agency is busy defending because they hired around it five years ago.</p>
+        <p><strong>AI shows up as internal velocity, not as a feature we sell to your end users.</strong> Catalog migrations cut by 70%. Code review on every PR. Test scaffolding from real production traffic. Audit tooling that flags the obvious so the human auditors can spend their time on the judgment calls. We use it where it shortens an honest task.</p>
+        <p>We don't ship a chatbot inside your storefront because the conference deck said to. We don't put "AI-powered" anywhere on a marketing page. The bar for an AI feature in a shipped product is whether it would still be useful at ten times the cost.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cadence">
+  <div class="sec-header"><span class="dot"></span><span>// 04 / The cadence</span></div>
+  <h2>What an <strong>engagement looks like</strong> from the inside.</h2>
+
+  <div class="cadence-grid">
+    <div class="phase">
+      <div class="num">/ 01</div>
+      <h3>Kickoff</h3>
+      <p>One full-day session. We agree on the metric we're moving — together — and write it on the whiteboard. Everything that follows is anchored to that one decision.</p>
+      <div class="duration">Week 1</div>
+    </div>
+    <div class="phase">
+      <div class="num">/ 02</div>
+      <h3>Discovery</h3>
+      <p>User research, audit reads, internal-team conversations. We bring the question; the data tells us the answer. Discovery ends when we've named what to build, and what to leave on the table.</p>
+      <div class="duration">Weeks 2–3</div>
+    </div>
+    <div class="phase">
+      <div class="num">/ 03</div>
+      <h3>Build</h3>
+      <p>Weekly demos, decisions documented in your tools, shippable increments every two weeks. We don't disappear into a Figma file for a month — the work is visible, in the browser, all the way through.</p>
+      <div class="duration">Weeks 4–10</div>
+    </div>
+    <div class="phase">
+      <div class="num">/ 04</div>
+      <h3>Handoff + warranty</h3>
+      <p>Documentation, training, a Slack line for two months post-launch. Your internal team is set up to extend the work without inheriting our judgment calls as folklore.</p>
+      <div class="duration">Weeks 11–12+</div>
+    </div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="bg-wave" aria-hidden="true">
+    <svg viewBox="0 0 1200 360" preserveAspectRatio="none">
+      <path class="a" d="M0,180 Q100,40 200,180 T400,180 T600,180 T800,180 T1000,180 T1200,180" />
+      <path class="b" d="M0,180 Q100,320 200,180 T400,180 T600,180 T800,180 T1000,180 T1200,180" />
+    </svg>
+  </div>
+  <div class="inner">
+    <div class="sec-header on-dark"><span class="dot"></span><span>// 05 / Get in touch</span></div>
+    <h2>Sound like the <strong>kind of partner</strong> you'd want?</h2>
+    <p class="body">Send us an email or call us at 801-363-0101. We're here weekdays, 8:30 am – 5:30 pm Mountain Time.</p>
+    <a href="/contact" class="btn-loud">Start a project conversation<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
+  </div>
+</section>
+</main>
+
+<footer class="bottom">
+  <div class="inner">
+    <div class="lockup"><img src="images/modelic-logo.png" alt="Modelic" /><p>A craft design and engineering shop. Salt Lake City, since 2014.</p></div>
+    <div><h4>// Services</h4><ul><li><a href="/services/development">Development</a></li><li><a href="/services/design">Design</a></li><li><a href="/services/commerce">Commerce</a></li><li><a href="/services/accessibility">Accessibility</a></li><li><a href="/services/app-development">App Development</a></li></ul></div>
+    <div><h4>// Studio</h4><ul><li><a href="/work">Work</a></li><li><a href="/team">Team</a></li><li><a href="/careers">Careers</a></li><li><a href="/blog">Blog</a></li></ul></div>
+    <div><h4>// Contact</h4><ul><li><a href="tel:+18013630101">801-363-0101</a></li><li><a href="mailto:hello@modelic.io">hello@modelic.io</a></li><li>Salt Lake City, UT</li><li>Weekdays · 8:30 – 5:30 MT</li></ul></div>
+    <div class="colophon"><span>© 2026 Modelic</span><span>Privacy · Cookies</span></div>
+  </div>
+</footer>
+
+</body>
+</html>

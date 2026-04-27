@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- stardust:provenance
+  generated_by: prototype
+  date: 2026-04-26
+  source_briefing: stardust/briefings/contact.md
+  source_brand: stardust/brand-profile.json
+  variant: home-b-v1 design language
+  copy_provenance:
+    - all # Copy slots: from briefings/contact.md verbatim
+    - email inbox flagged [TBD] in briefing — placeholder hello@modelic.io shown here
+-->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact — Modelic</title>
+<meta name="description" content="Tell us about your project. The shortest path is the form below — or call us. We answer." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --color-canvas: #FFFFFF; --color-ink: #1A1A1A; --color-ink-rich: #242424;
+    --color-ink-soft: rgba(36,36,36,0.66); --color-ink-quiet: rgba(36,36,36,0.42);
+    --color-rule: rgba(36,36,36,0.08); --color-wavelength: #68D0D0;
+    --color-wavelength-deep: #2FAEAE; --color-foam: #CCE4E4; --color-drafting: #F4F4F2;
+    --font-body: 'Inter', sans-serif; --font-display: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+    --heading-mega: clamp(48px, 6.5vw, 96px);
+    --section-padding-y: clamp(96px, 11vw, 144px);
+    --section-padding-x: clamp(24px, 4vw, 56px);
+    --max-width: 1280px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--color-canvas); color: var(--color-ink); font-family: var(--font-body); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; padding-top: 56px; }
+  a { color: inherit; text-decoration: none; }
+  ::selection { background: var(--color-wavelength); color: var(--color-ink-rich); }
+
+  nav.top { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.85); backdrop-filter: blur(20px) saturate(1.4); border-bottom: 1px solid var(--color-rule); padding: 14px 0; }
+  nav.top .inner { max-width: 1440px; margin: 0 auto; padding: 0 var(--section-padding-x); display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  nav.top .lockup { display: flex; align-items: center; gap: 14px; }
+  nav.top .lockup img { height: 22px; }
+  nav.top ul.links { list-style: none; margin: 0; padding: 0; display: flex; gap: 28px; }
+  nav.top ul.links a { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; }
+  nav.top ul.links a.current { color: var(--color-wavelength-deep); }
+  nav.top .cta-btn { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 11px 18px; background: var(--color-ink-rich); color: var(--color-canvas); display: inline-flex; align-items: center; gap: 8px; }
+
+  .sec-header { display: flex; align-items: flex-start; gap: 14px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-ink-soft); margin-bottom: 28px; }
+  .sec-header .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--color-wavelength-deep); margin-top: 4px; flex-shrink: 0; }
+
+  /* PAGE OPEN */
+  section.open { padding: clamp(96px, 11vw, 160px) var(--section-padding-x) clamp(48px, 6vw, 96px); max-width: var(--max-width); margin: 0 auto; }
+  .open .meta { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-wavelength-deep); display: flex; align-items: center; gap: 14px; margin-bottom: 28px; }
+  .open .meta::before { content: ""; width: 28px; height: 1px; background: var(--color-wavelength-deep); }
+  .open h1 { font-family: var(--font-display); font-weight: 100; font-size: var(--heading-mega); line-height: 0.94; letter-spacing: -0.04em; margin: 0 0 24px; max-width: 16ch; }
+  .open h1 strong { font-weight: 700; }
+  .open h1 strong em { font-style: normal; color: var(--color-wavelength-deep); }
+  .open .lede { font-size: 22px; color: var(--color-ink-soft); line-height: 1.5; max-width: 56ch; margin: 0; }
+
+  /* MAIN GRID — form on left, channels on right */
+  section.contact-grid { padding: 0 var(--section-padding-x) var(--section-padding-y); max-width: var(--max-width); margin: 0 auto; }
+  .grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: clamp(48px, 6vw, 96px); align-items: start; }
+
+  /* FORM */
+  .form-wrap { background: var(--color-drafting); padding: clamp(40px, 4vw, 56px); border-top: 3px solid var(--color-wavelength); }
+  form .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  form .field { margin-bottom: 24px; }
+  form label { display: block; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-ink-rich); margin-bottom: 8px; }
+  form label .opt { color: var(--color-ink-quiet); font-weight: 400; margin-left: 6px; }
+  form input[type="text"], form input[type="email"], form textarea {
+    width: 100%; padding: 14px 16px;
+    background: var(--color-canvas);
+    border: 1px solid var(--color-rule);
+    font-family: var(--font-body); font-size: 16px; color: var(--color-ink-rich);
+    transition: border-color .2s, box-shadow .2s;
+    border-radius: 0;
+  }
+  form input:focus, form textarea:focus {
+    outline: none;
+    border-color: var(--color-wavelength-deep);
+    box-shadow: 0 0 0 3px rgba(104,208,208,0.16);
+  }
+  form textarea { min-height: 140px; resize: vertical; line-height: 1.55; }
+  form .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  form .chip { padding: 9px 14px; border: 1px solid var(--color-rule); background: var(--color-canvas); cursor: pointer; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-ink-soft); transition: all .15s; }
+  form .chip:hover { border-color: var(--color-wavelength-deep); color: var(--color-wavelength-deep); }
+  form .chip.on { background: var(--color-ink-rich); color: var(--color-canvas); border-color: var(--color-ink-rich); }
+  form .submit-row { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-top: 16px; flex-wrap: wrap; }
+  form .privacy { font-size: 12px; color: var(--color-ink-soft); max-width: 36ch; line-height: 1.5; margin: 0; }
+  form button[type="submit"] {
+    display: inline-flex; align-items: center; gap: 12px; padding: 18px 32px;
+    background: var(--color-ink-rich); color: var(--color-canvas);
+    border: 1px solid var(--color-ink-rich);
+    font-family: var(--font-body);
+    font-size: 12px; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    cursor: pointer;
+    transition: background .2s, transform .2s;
+    border-radius: 0;
+  }
+  form button[type="submit"]:hover { background: var(--color-wavelength-deep); border-color: var(--color-wavelength-deep); transform: translateY(-1px); }
+
+  /* DIRECT CHANNELS */
+  .channels-block h2 {
+    font-family: var(--font-display); font-weight: 100;
+    font-size: clamp(28px, 3vw, 40px); line-height: 1; letter-spacing: -0.025em;
+    margin: 0 0 24px;
+  }
+  .channels-block .ch { margin-bottom: 32px; padding-bottom: 32px; border-bottom: 1px solid var(--color-rule); }
+  .channels-block .ch:last-child { border-bottom: 0; padding-bottom: 0; margin-bottom: 0; }
+  .channels-block .ch .label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-wavelength-deep); margin-bottom: 10px; }
+  .channels-block .ch .val { font-family: var(--font-display); font-weight: 300; font-size: clamp(20px, 1.8vw, 26px); letter-spacing: -0.015em; line-height: 1.3; }
+  .channels-block .ch .val a:hover { color: var(--color-wavelength-deep); }
+  .channels-block .ch .meta { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-ink-soft); margin-top: 8px; }
+
+  /* STUDIO */
+  section.studio { background: var(--color-ink-rich); color: var(--color-canvas); padding: var(--section-padding-y) var(--section-padding-x); position: relative; overflow: hidden; }
+  section.studio::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 800px 400px at 80% 50%, rgba(104,208,208,0.06), transparent 65%); pointer-events: none; }
+  section.studio .inner { max-width: var(--max-width); margin: 0 auto; position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: end; }
+  .studio-words .sec-header { color: rgba(255,255,255,0.55); }
+  .studio-words .sec-header .dot { background: var(--color-wavelength); }
+  .studio-words h2 { font-family: var(--font-display); font-weight: 100; font-size: clamp(40px, 4.5vw, 72px); line-height: 0.96; letter-spacing: -0.035em; margin: 0 0 24px; max-width: 12ch; color: var(--color-canvas); }
+  .studio-words h2 strong { font-weight: 700; color: var(--color-wavelength); }
+  .studio-words p { font-size: 18px; line-height: 1.6; color: rgba(255,255,255,0.78); margin: 0 0 16px; }
+  .studio-words p:last-child { margin-bottom: 0; }
+  .studio-stats { display: flex; gap: 32px; margin-top: 36px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.12); }
+  .studio-stat .label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-wavelength); margin-bottom: 6px; }
+  .studio-stat .v { font-family: var(--font-display); font-weight: 200; font-size: 14px; color: var(--color-canvas); line-height: 1.4; }
+
+  /* Closing wave anchor */
+  .closing-wave { padding: 80px var(--section-padding-x) 64px; background: var(--color-canvas); display: flex; justify-content: center; }
+  .closing-wave svg { width: 240px; height: 56px; }
+  .closing-wave path { fill: none; stroke-width: 3; stroke-linecap: round; }
+  .closing-wave .a { stroke: var(--color-ink-rich); }
+  .closing-wave .b { stroke: var(--color-wavelength); }
+
+  footer.bottom { background: var(--color-ink); color: rgba(255,255,255,0.62); padding: 64px var(--section-padding-x) 36px; }
+  footer.bottom .inner { max-width: 1440px; margin: 0 auto; display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 48px; }
+  footer.bottom h4 { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-wavelength); margin: 0 0 18px; }
+  footer.bottom ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+  footer.bottom a { color: rgba(255,255,255,0.7); font-size: 13px; }
+  footer.bottom .lockup img { height: 26px; filter: invert(1); margin-bottom: 16px; }
+  footer.bottom .lockup p { margin: 0; font-size: 13px; line-height: 1.55; max-width: 32ch; }
+  footer.bottom .colophon { grid-column: 1 / -1; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 24px; margin-top: 28px; display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.32); }
+
+  @media (max-width: 980px) {
+    .grid { grid-template-columns: 1fr; }
+    form .field-row { grid-template-columns: 1fr; }
+    section.studio .inner { grid-template-columns: 1fr; }
+    footer.bottom .inner { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+<nav class="top">
+  <div class="inner">
+    <a class="lockup" href="/"><img src="images/modelic-logo.png" alt="Modelic" /></a>
+    <ul class="links">
+      <li><a href="/work">Work</a></li>
+      <li><a href="/services/commerce">Services</a></li>
+      <li><a href="/approach">Approach</a></li>
+      <li><a href="/team">Team</a></li>
+    </ul>
+    <a class="cta-btn current" href="/contact">Start a project<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
+  </div>
+</nav>
+</header>
+
+<main>
+
+<section class="open">
+  <div class="meta">// Contact</div>
+  <h1>Tell us about <strong>your <em>project.</em></strong></h1>
+  <p class="lede">The shortest path is the form below — or call us. We answer.</p>
+</section>
+
+<section class="contact-grid">
+  <div class="grid">
+
+    <div class="form-wrap">
+      <form action="/api/contact" method="post">
+        <div class="field-row">
+          <div class="field">
+            <label for="f-name">Your name <span class="opt">/ required</span></label>
+            <input id="f-name" name="name" type="text" required />
+          </div>
+          <div class="field">
+            <label for="f-email">Your email <span class="opt">/ required</span></label>
+            <input id="f-email" name="email" type="email" required />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="f-company">Company / Project name <span class="opt">/ optional</span></label>
+          <input id="f-company" name="company" type="text" />
+        </div>
+
+        <div class="field">
+          <label>What kind of work are you thinking about? <span class="opt">/ optional · pick any</span></label>
+          <div class="chips">
+            <button type="button" class="chip">Brand</button>
+            <button type="button" class="chip">Commerce</button>
+            <button type="button" class="chip">Accessibility</button>
+            <button type="button" class="chip">App</button>
+            <button type="button" class="chip">Engineering</button>
+            <button type="button" class="chip on">Not sure yet</button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Roughly when? <span class="opt">/ optional</span></label>
+          <div class="chips">
+            <button type="button" class="chip">In the next month</button>
+            <button type="button" class="chip">1–3 months</button>
+            <button type="button" class="chip">3–6 months</button>
+            <button type="button" class="chip on">No specific timeline</button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="f-message">Tell us about it <span class="opt">/ required</span></label>
+          <textarea id="f-message" name="message" required placeholder="What you're working on, what's not working, what success looks like — whatever you've got. A paragraph is plenty."></textarea>
+        </div>
+
+        <div class="field">
+          <label>Budget range <span class="opt">/ optional</span></label>
+          <div class="chips">
+            <button type="button" class="chip">Under $25k</button>
+            <button type="button" class="chip">$25–75k</button>
+            <button type="button" class="chip">$75–150k</button>
+            <button type="button" class="chip">$150k+</button>
+            <button type="button" class="chip on">Need to scope it together</button>
+          </div>
+        </div>
+
+        <div class="submit-row">
+          <p class="privacy">We'll only use this to reply. No newsletters, no follow-up sequences.</p>
+          <button type="submit">
+            Send
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <div class="channels-block">
+      <div class="sec-header"><span class="dot"></span><span>// Or skip the form</span></div>
+      <h2>Reach a <strong>real person.</strong></h2>
+      <div class="ch">
+        <div class="label">Phone</div>
+        <div class="val"><a href="tel:+18013630101">801-363-0101</a></div>
+        <div class="meta">Weekdays · 8:30 am – 5:30 pm Mountain Time</div>
+      </div>
+      <div class="ch">
+        <div class="label">Email</div>
+        <div class="val"><a href="mailto:hello@modelic.io">hello@modelic.io</a></div>
+        <div class="meta">We answer same-day during the week</div>
+      </div>
+      <div class="ch">
+        <div class="label">Studio</div>
+        <div class="val">Salt Lake City, Utah</div>
+        <div class="meta">In town and want to drop by? Send a note first — the studio's small.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="studio">
+  <div class="inner">
+    <div class="studio-words">
+      <div class="sec-header"><span class="dot"></span><span>// 03 / What happens after you send</span></div>
+      <h2>One of us will <strong>reply by name.</strong></h2>
+      <p>Not from a noreply address. Not after a 24-hour SLA window. By name, by the end of the next business day — usually the same day.</p>
+      <p>If your project is a fit, we'll suggest a 30-minute call to scope it together. If it's not, we'll tell you that too — and where else to look. We'd rather a clear no than a polite maze.</p>
+      <div class="studio-stats">
+        <div class="studio-stat"><div class="label">Response time</div><div class="v">Same day · 24 hr max</div></div>
+        <div class="studio-stat"><div class="label">No</div><div class="v">Auto-responders</div></div>
+        <div class="studio-stat"><div class="label">No</div><div class="v">Newsletter signups</div></div>
+      </div>
+    </div>
+    <div></div>
+  </div>
+</section>
+
+<div class="closing-wave" aria-hidden="true">
+  <svg viewBox="0 0 240 56" preserveAspectRatio="none">
+    <path class="a" d="M0,28 Q24,0 48,28 T96,28 T144,28 T192,28 T240,28" />
+    <path class="b" d="M0,28 Q24,56 48,28 T96,28 T144,28 T192,28 T240,28" />
+  </svg>
+</div>
+</main>
+
+<footer class="bottom">
+  <div class="inner">
+    <div class="lockup"><img src="images/modelic-logo.png" alt="Modelic" /><p>A craft design and engineering shop. Salt Lake City, since 2014.</p></div>
+    <div><h4>// Services</h4><ul><li><a href="/services/development">Development</a></li><li><a href="/services/design">Design</a></li><li><a href="/services/commerce">Commerce</a></li><li><a href="/services/accessibility">Accessibility</a></li><li><a href="/services/app-development">App Development</a></li></ul></div>
+    <div><h4>// Studio</h4><ul><li><a href="/work">Work</a></li><li><a href="/team">Team</a></li><li><a href="/careers">Careers</a></li><li><a href="/blog">Blog</a></li></ul></div>
+    <div><h4>// Contact</h4><ul><li><a href="tel:+18013630101">801-363-0101</a></li><li><a href="mailto:hello@modelic.io">hello@modelic.io</a></li><li>Salt Lake City, UT</li><li>Weekdays · 8:30 – 5:30 MT</li></ul></div>
+    <div class="colophon"><span>© 2026 Modelic</span><span>Privacy · Cookies</span></div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('form .chip').forEach(c => c.addEventListener('click', e => { e.preventDefault(); c.classList.toggle('on'); }));
+</script>
+
+</body>
+</html>
